@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcfyehxsk286o"]
+[gd_scene load_steps=4 format=3 uid="uid://cogtmobyqsk7n"]
 
 [ext_resource type="Script" path="res://scripts/square_shape.gd" id="1_d4s7i"]
 [ext_resource type="Texture2D" uid="uid://lflaqjlhr55i" path="res://assets/square_shape.png" id="1_m7ouv"]
@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcpny"]
 size = Vector2(200, 197)
 
-[node name="square_shape" type="CharacterBody2D"]
+[node name="square" type="CharacterBody2D"]
 script = ExtResource("1_d4s7i")
 
-[node name="square_coll" type="CollisionShape2D" parent="."]
+[node name="coll" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_qcpny")
 
-[node name="square_texture" type="Sprite2D" parent="."]
+[node name="texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_m7ouv")

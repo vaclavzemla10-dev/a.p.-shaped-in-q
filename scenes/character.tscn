@@ -1,17 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtxe2moie1y4e"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_beeca"]
-[ext_resource type="PackedScene" uid="uid://02huknx8sttw" path="res://scenes/circle_shape.tscn" id="2_fciax"]
-[ext_resource type="PackedScene" uid="uid://b38jyis0y3sbq" path="res://scenes/rectangle_shape.tscn" id="3_a7aur"]
-[ext_resource type="PackedScene" uid="uid://bcfyehxsk286o" path="res://scenes/square_shape.tscn" id="4_cmyta"]
+[ext_resource type="PackedScene" uid="uid://dky3esakio02c" path="res://scenes/circle.tscn" id="2_576t3"]
+[ext_resource type="PackedScene" uid="uid://cjewpslk2hilc" path="res://scenes/rectangle.tscn" id="3_uh61u"]
+[ext_resource type="PackedScene" uid="uid://cogtmobyqsk7n" path="res://scenes/square.tscn" id="4_42qdh"]
 
 [node name="character" type="Node2D"]
 script = ExtResource("1_beeca")
 
-[node name="circle_shape" parent="." instance=ExtResource("2_fciax")]
+[node name="circle" parent="." instance=ExtResource("2_576t3")]
 
-[node name="rectangle_shape" parent="." instance=ExtResource("3_a7aur")]
-position = Vector2(115, 1)
+[node name="rectangle" parent="." instance=ExtResource("3_uh61u")]
 
-[node name="square_shape" parent="." instance=ExtResource("4_cmyta")]
-position = Vector2(-165, 0)
+[node name="square" parent="." instance=ExtResource("4_42qdh")]

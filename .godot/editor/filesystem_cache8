@@ -1,26 +1,25 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1773864367
-README.md::TextFile::-1::1773784063::0::1::::<><>::
-::res://assets/::1771952746
+::res://::1774168287
+::res://assets/::1774209984
 circle_shape.png::CompressedTexture2D::4141123395495625796::1771916458::1771916465::1::::<><>::
+ground.png::CompressedTexture2D::6636026141836460763::1774209820::1774209989::1::::<><>::
 icon.svg::CompressedTexture2D::7755366531628557744::1769266563::1769266603::1::::<><>::
 rectangle_shape.png::CompressedTexture2D::2553763124724692953::1771916458::1771916465::1::::<><>::
 SHAPED IN Q BG WP.png::CompressedTexture2D::8510440435128456493::1771927818::1771927818::1::::<><>::
 square_shape.png::CompressedTexture2D::783067910495776148::1771916458::1771916465::1::::<><>::
 Strogo.ttf::FontFile::6673878749488812767::1771952743::1771952746::1::::<><>::
-::res://scenes/::1772014023
-character.tscn::PackedScene::8540622505229134286::1772014023::0::1::::<><>::res://scripts/character.gd<>uid://02huknx8sttw::::res://scenes/circle_shape.tscn<>uid://b38jyis0y3sbq::::res://scenes/rectangle_shape.tscn<>uid://bcfyehxsk286o::::res://scenes/square_shape.tscn
-circle_shape.tscn::PackedScene::1810920571543689512::1772014023::0::1::::<><>::res://scripts/circle_shape.gd<>uid://by88xycutogtg::::res://assets/circle_shape.png
-level_1.tscn::PackedScene::8483507284626036550::1772014023::0::1::::<><>::
-main.tscn::PackedScene::2678165450463946080::1772014023::0::1::::<><>::uid://b38jyis0y3sbq::::res://scenes/rectangle_shape.tscn<>uid://dtxe2moie1y4e::::res://scenes/character.tscn
-main_menu.tscn::PackedScene::4322556407393217810::1772014023::0::1::::<><>::res://scripts/main_menu.gd<>uid://dtiryfop3i6y8::::res://assets/SHAPED IN Q BG WP.png<>uid://c2c42p8g5lu7x::::res://assets/Strogo.ttf
-rectangle_shape.tscn::PackedScene::4420422532592955770::1772014023::0::1::::<><>::res://scripts/rectangle_shape.gd<>uid://bcncduayu8wfp::::res://assets/rectangle_shape.png
+::res://scenes/::1774169710
+character.tscn::PackedScene::8540622505229134286::1774169710::0::1::::<><>::res://scripts/character.gd<>uid://02huknx8sttw::::res://scenes/circle_shape.tscn<>uid://b38jyis0y3sbq::::res://scenes/rectangle_shape.tscn<>uid://bcfyehxsk286o::::res://scenes/square_shape.tscn
+circle_shape.tscn::PackedScene::1810920571543689512::1774169710::0::1::::<><>::res://scripts/circle_shape.gd<>uid://by88xycutogtg::::res://assets/circle_shape.png
+level_1.tscn::PackedScene::8483507284626036550::1774169710::0::1::::<><>::uid://dtxe2moie1y4e::::res://scenes/character.tscn
+main.tscn::PackedScene::2678165450463946080::1774169710::0::1::::<><>::uid://b38jyis0y3sbq::::res://scenes/rectangle_shape.tscn<>uid://dtxe2moie1y4e::::res://scenes/character.tscn
+main_menu.tscn::PackedScene::4322556407393217810::1774169710::0::1::::<><>::res://scripts/main_menu.gd<>uid://dtiryfop3i6y8::::res://assets/SHAPED IN Q BG WP.png<>uid://c2c42p8g5lu7x::::res://assets/Strogo.ttf
+rectangle_shape.tscn::PackedScene::4420422532592955770::1774169710::0::1::::<><>::res://scripts/rectangle_shape.gd<>uid://bcncduayu8wfp::::res://assets/rectangle_shape.png
 screen.tscn::PackedScene::8627027569688343942::1771918721::0::1::::<><>::
-square_shape.tscn::PackedScene::2538585014767733416::1772014023::0::1::::<><>::res://scripts/square_shape.gd<>uid://lflaqjlhr55i::::res://assets/square_shape.png
-::res://scripts/::1772181325
-character.gd::GDScript::-1::1772181325::0::1::::<>Node2D<>::
+square_shape.tscn::PackedScene::2538585014767733416::1774169710::0::1::::<><>::res://scripts/square_shape.gd<>uid://lflaqjlhr55i::::res://assets/square_shape.png
+::res://scripts/::1774169686
+character.gd::GDScript::-1::1774169686::0::1::::<>Node2D<>::
 circle_shape.gd::GDScript::-1::1771917221::0::1::::<>CharacterBody2D<>::
 main_menu.gd::GDScript::-1::1772014023::0::1::::<>Control<>::
 rectangle_shape.gd::GDScript::-1::1771928172::0::1::::<>CharacterBody2D<>::
 square_shape.gd::GDScript::-1::1771916666::0::1::::<>CharacterBody2D<>::
-::res://shaped in q/::1773784217
