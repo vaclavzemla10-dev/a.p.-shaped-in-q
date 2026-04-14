@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0eru2iekiwic"]
+
+[ext_resource type="Script" path="res://scripts/pausemenu.gd" id="1_vvkgh"]
+[ext_resource type="FontFile" uid="uid://c2c42p8g5lu7x" path="res://assets/Strogo.ttf" id="2_rxvgn"]
+
+[node name="pausemenu" type="CanvasLayer"]
+script = ExtResource("1_vvkgh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 128.0
+offset_bottom = 52.0
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 128.0
+offset_bottom = 52.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rxvgn")
+theme_override_font_sizes/font_size = 16
+text = "EXIT"
+
+[node name="resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rxvgn")
+theme_override_font_sizes/font_size = 16
+text = "RESUME"
+
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]

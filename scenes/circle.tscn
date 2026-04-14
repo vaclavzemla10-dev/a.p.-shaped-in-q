@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://by88xycutogtg" path="res://assets/circle_shape.png" id="1_bbl85"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n34dp"]
-radius = 50.04
+radius = 34.0
 
 [node name="circle" type="CharacterBody2D"]
 script = ExtResource("1_324j4")
@@ -13,4 +13,5 @@ script = ExtResource("1_324j4")
 shape = SubResource("CircleShape2D_n34dp")
 
 [node name="texture" type="Sprite2D" parent="."]
+scale = Vector2(0.683594, 0.683594)
 texture = ExtResource("1_bbl85")

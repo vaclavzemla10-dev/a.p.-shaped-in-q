@@ -10,6 +10,18 @@ script = ExtResource("1_beeca")
 
 [node name="circle" parent="." instance=ExtResource("2_576t3")]
 
+[node name="Camera2D" type="Camera2D" parent="circle"]
+process_callback = 0
+position_smoothing_enabled = true
+
 [node name="rectangle" parent="." instance=ExtResource("3_uh61u")]
 
+[node name="Camera2D" type="Camera2D" parent="rectangle"]
+process_callback = 0
+position_smoothing_enabled = true
+
 [node name="square" parent="." instance=ExtResource("4_42qdh")]
+
+[node name="Camera2D" type="Camera2D" parent="square"]
+process_callback = 0
+position_smoothing_enabled = true

@@ -1,9 +1,8 @@
 extends Node2D
 
-@onready var circle: CharacterBody2D = $circle
-@onready var rectangle: CharacterBody2D = $rectangle
-@onready var square: CharacterBody2D = $square
-
+@onready var square = $square
+@onready var rectangle = $rectangle
+@onready var circle = $circle
 
 var current = 0
 
@@ -25,17 +24,17 @@ func _process(delta):
 		new_node.global_position = pos
 
 func activate_shape(index):
-	# vypnout vše
 	for shape in [square, rectangle, circle]:
 		shape.visible = false
 		shape.set_physics_process(false)
 		shape.get_node("coll").disabled = true
+		shape.get_node("Camera2D").enabled = false
 
-	# zapnout jen jeden
 	var active = get_shape_by_index(index)
 	active.visible = true
 	active.set_physics_process(true)
 	active.get_node("coll").disabled = false
+	active.get_node("Camera2D").enabled = true
 
 func get_current_shape():
 	return get_shape_by_index(current)

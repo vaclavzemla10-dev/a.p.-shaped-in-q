@@ -8,8 +8,3 @@ func _on_start_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
-
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("esc"):
-		get_tree().quit()

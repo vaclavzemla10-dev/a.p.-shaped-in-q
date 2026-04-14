@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cukwepxig4pho"]
+
+[ext_resource type="Texture2D" uid="uid://c2rhrknu5u6mb" path="res://assets/spike.png" id="1_3pusi"]
+[ext_resource type="Script" path="res://scripts/spike.gd" id="1_utjt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbovk"]
+size = Vector2(128, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tb71"]
+size = Vector2(44, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwnju"]
+size = Vector2(30.5, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7irf"]
+size = Vector2(24, 22)
+
+[node name="spike" type="Area2D"]
+z_index = 1
+script = ExtResource("1_utjt5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3pusi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 41.5)
+shape = SubResource("RectangleShape2D_xbovk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1tb71")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-35, 8)
+shape = SubResource("RectangleShape2D_hwnju")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(37.75, 8)
+shape = SubResource("RectangleShape2D_hwnju")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(1, -34)
+shape = SubResource("RectangleShape2D_y7irf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://befk81x1chocm"]
 
-[ext_resource type="PackedScene" uid="uid://b38jyis0y3sbq" path="res://scenes/rectangle_shape.tscn" id="2_77qse"]
+[ext_resource type="PackedScene" uid="uid://cukwepxig4pho" path="res://scenes/spike.tscn" id="2_7b0y3"]
 [ext_resource type="PackedScene" uid="uid://dtxe2moie1y4e" path="res://scenes/character.tscn" id="2_hpkxc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jkmj3"]
@@ -20,6 +20,9 @@ scale = Vector2(10, 10)
 shape = SubResource("WorldBoundaryShape2D_fywch")
 one_way_collision = true
 
-[node name="rectangle_shape" parent="." instance=ExtResource("2_77qse")]
-
 [node name="character" parent="." instance=ExtResource("2_hpkxc")]
+z_index = 1
+position = Vector2(-215, 8)
+
+[node name="spike" parent="." instance=ExtResource("2_7b0y3")]
+position = Vector2(21, 219)
