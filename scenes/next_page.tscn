@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b35d1gykdllnl"]
+
+[ext_resource type="Texture2D" uid="uid://bwi7pjm6u1j5b" path="res://assets/arrow.png" id="1_efphm"]
+[ext_resource type="Script" path="res://scripts/next_page.gd" id="2_p2am1"]
+
+[node name="next_page" type="TextureButton"]
+offset_left = 659.0
+offset_top = 258.0
+offset_right = 675.0
+offset_bottom = 274.0
+scale = Vector2(27.36, 24.84)
+texture_normal = ExtResource("1_efphm")
+script = ExtResource("2_p2am1")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

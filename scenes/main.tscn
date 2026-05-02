@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://befk81x1chocm"]
+[gd_scene load_steps=4 format=3 uid="uid://befk81x1chocm"]
 
-[ext_resource type="PackedScene" uid="uid://cukwepxig4pho" path="res://scenes/spike.tscn" id="2_7b0y3"]
 [ext_resource type="PackedScene" uid="uid://dtxe2moie1y4e" path="res://scenes/character.tscn" id="2_hpkxc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jkmj3"]
@@ -8,8 +7,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fywch"]
 
 [node name="Main" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(2, 296)
@@ -21,8 +18,8 @@ shape = SubResource("WorldBoundaryShape2D_fywch")
 one_way_collision = true
 
 [node name="character" parent="." instance=ExtResource("2_hpkxc")]
-z_index = 1
 position = Vector2(-215, 8)
 
-[node name="spike" parent="." instance=ExtResource("2_7b0y3")]
-position = Vector2(21, 219)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-220, 187)
+zoom = Vector2(5, 5)

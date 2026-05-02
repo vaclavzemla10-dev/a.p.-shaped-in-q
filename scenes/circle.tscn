@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dky3esakio02c"]
+[gd_scene load_steps=5 format=3 uid="uid://dky3esakio02c"]
 
 [ext_resource type="Script" path="res://scripts/circle_shape.gd" id="1_324j4"]
-[ext_resource type="Texture2D" uid="uid://by88xycutogtg" path="res://assets/circle_shape.png" id="1_bbl85"]
+[ext_resource type="Texture2D" uid="uid://qf60tog2t5rq" path="res://assets/circle.png" id="2_34i7l"]
+[ext_resource type="AudioStream" uid="uid://kxejwiqhgnsi" path="res://assets/sounds/jump.wav" id="3_glbq8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n34dp"]
-radius = 34.0
+radius = 8.0
 
 [node name="circle" type="CharacterBody2D"]
 script = ExtResource("1_324j4")
 
 [node name="coll" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.9)
 shape = SubResource("CircleShape2D_n34dp")
 
 [node name="texture" type="Sprite2D" parent="."]
-scale = Vector2(0.683594, 0.683594)
-texture = ExtResource("1_bbl85")
+texture = ExtResource("2_34i7l")
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_glbq8")

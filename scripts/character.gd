@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var score_label: Label = $"../score_label"
+@onready var changesound: AudioStreamPlayer2D = $changesound
 @onready var square = $square
 @onready var rectangle = $rectangle
 @onready var circle = $circle
@@ -10,9 +12,28 @@ func _ready():
 	activate_shape(0)
 
 func _process(delta):
+	
+	
+	
+	
+	
+	if Input.is_action_just_pressed("reset"):
+		var active = get_current_shape()
+		active.get_node("texture").visible = false
+		var anim = active.get_node("player_anim")
+		anim.dead = true
+		anim.play("die_explode")
+		await anim.animation_finished
+		get_tree().reload_current_scene()
+		
+	
 	if Input.is_action_just_pressed("change_shape"):
+		changesound.play()
 		var current_node = get_current_shape()
 		var pos = current_node.global_position
+		
+		
+
 		
 		current += 1
 		if current > 2:
@@ -28,13 +49,11 @@ func activate_shape(index):
 		shape.visible = false
 		shape.set_physics_process(false)
 		shape.get_node("coll").disabled = true
-		shape.get_node("Camera2D").enabled = false
 
 	var active = get_shape_by_index(index)
 	active.visible = true
 	active.set_physics_process(true)
 	active.get_node("coll").disabled = false
-	active.get_node("Camera2D").enabled = true
 
 func get_current_shape():
 	return get_shape_by_index(current)

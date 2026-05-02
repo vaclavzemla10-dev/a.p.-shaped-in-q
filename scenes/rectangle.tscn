@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjewpslk2hilc"]
+[gd_scene load_steps=5 format=3 uid="uid://cjewpslk2hilc"]
 
 [ext_resource type="Script" path="res://scripts/rectangle_shape.gd" id="1_sgisg"]
-[ext_resource type="Texture2D" uid="uid://bcncduayu8wfp" path="res://assets/rectangle_shape.png" id="1_v406q"]
+[ext_resource type="Texture2D" uid="uid://dlmbpy42o7yya" path="res://assets/rectangle.png" id="2_m2tf8"]
+[ext_resource type="AudioStream" uid="uid://kxejwiqhgnsi" path="res://assets/sounds/jump.wav" id="3_2mq1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71w8c"]
-size = Vector2(100, 200)
+size = Vector2(14, 26)
 
 [node name="rectangle" type="CharacterBody2D"]
 script = ExtResource("1_sgisg")
@@ -13,4 +14,8 @@ script = ExtResource("1_sgisg")
 shape = SubResource("RectangleShape2D_71w8c")
 
 [node name="texture" type="Sprite2D" parent="."]
-texture = ExtResource("1_v406q")
+scale = Vector2(1.375, 1.625)
+texture = ExtResource("2_m2tf8")
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2mq1a")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://j6n3l2bvlmtl"]
+
+[ext_resource type="Texture2D" uid="uid://bqvq6nfdfxl21" path="res://assets/home icon.png" id="1_va77d"]
+[ext_resource type="Script" path="res://scripts/home.gd" id="2_aye5s"]
+
+[node name="home" type="TextureButton"]
+offset_right = 16.0
+offset_bottom = 16.0
+scale = Vector2(3.24, 3.30291)
+texture_normal = ExtResource("1_va77d")
+script = ExtResource("2_aye5s")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

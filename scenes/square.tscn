@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cogtmobyqsk7n"]
+[gd_scene load_steps=5 format=3 uid="uid://cogtmobyqsk7n"]
 
 [ext_resource type="Script" path="res://scripts/square_shape.gd" id="1_d4s7i"]
-[ext_resource type="Texture2D" uid="uid://lflaqjlhr55i" path="res://assets/square_shape.png" id="1_m7ouv"]
+[ext_resource type="Texture2D" uid="uid://n6o38ld6tqcv" path="res://assets/square.png" id="2_50isd"]
+[ext_resource type="AudioStream" uid="uid://kxejwiqhgnsi" path="res://assets/sounds/jump.wav" id="3_og145"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcpny"]
-size = Vector2(200, 197)
+size = Vector2(24, 24)
 
 [node name="square" type="CharacterBody2D"]
 script = ExtResource("1_d4s7i")
 
 [node name="coll" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_qcpny")
 
 [node name="texture" type="Sprite2D" parent="."]
-texture = ExtResource("1_m7ouv")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_50isd")
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_og145")
