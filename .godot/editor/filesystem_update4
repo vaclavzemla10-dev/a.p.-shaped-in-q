@@ -1,3 +1,5 @@
+res://scripts/level_4.gd
+res://scenes/level_4.tscn
 res://scenes/player.tscn
 res://scenes/square.tscn
 res://scenes/rectangle.tscn
@@ -18,8 +20,3 @@ res://scenes/pause_menu.tscn
 res://scenes/level_1.tscn
 res://scenes/level_2.tscn
 res://scenes/level_3.tscn
-res://scripts/power_up.gd
-res://scripts/level_3.gd
-res://scripts/level_1.gd
-res://scripts/level_4.gd
-res://scenes/level_4.tscn

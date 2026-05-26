@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b2d2sivv82fc3"]
+[gd_scene load_steps=48 format=3 uid="uid://b2d2sivv82fc3"]
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_72lyb"]
 [ext_resource type="PackedScene" uid="uid://b23f5qaeaewfe" path="res://scenes/pause_menu.tscn" id="2_a3fp2"]
@@ -32,6 +32,45 @@ physics_layer_0/collision_mask = 9
 sources/0 = SubResource("TileSetAtlasSource_pcfi3")
 sources/1 = SubResource("TileSetAtlasSource_xcngk")
 sources/2 = SubResource("TileSetAtlasSource_rw58n")
+
+[sub_resource type="Animation" id="Animation_o8w5c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spike:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(290, -232)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("spike2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(274, -232)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("spike3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(258, -232)]
+}
 
 [sub_resource type="Animation" id="Animation_47if6"]
 resource_name = "spikes_moves"
@@ -73,49 +112,49 @@ tracks/2/keys = {
 "values": [Vector2(280, -232), Vector2(328, -232)]
 }
 
-[sub_resource type="Animation" id="Animation_o8w5c"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgmp8"]
+_data = {
+"RESET": SubResource("Animation_o8w5c"),
+"spikes_moves": SubResource("Animation_47if6")
+}
+
+[sub_resource type="Animation" id="Animation_y7lpp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("spike:position")
+tracks/0/path = NodePath("spike4:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(290, -232)]
+"values": [Vector2(232, -232)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("spike2:position")
+tracks/1/path = NodePath("spike5:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(274, -232)]
+"values": [Vector2(216, -232)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("spike3:position")
+tracks/2/path = NodePath("spike6:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(258, -232)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgmp8"]
-_data = {
-"RESET": SubResource("Animation_o8w5c"),
-"spikes_moves": SubResource("Animation_47if6")
+"values": [Vector2(200, -232)]
 }
 
 [sub_resource type="Animation" id="Animation_tgfq0"]
@@ -158,49 +197,61 @@ tracks/2/keys = {
 "values": [Vector2(200, -232), Vector2(152, -232)]
 }
 
-[sub_resource type="Animation" id="Animation_y7lpp"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mo0u5"]
+_data = {
+"RESET": SubResource("Animation_y7lpp"),
+"spikes_moving": SubResource("Animation_tgfq0")
+}
+
+[sub_resource type="Animation" id="Animation_lrpfr"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("spike4:position")
+tracks/0/path = NodePath("spike7:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(232, -232)]
+"values": [Vector2(72, -232)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("spike5:position")
+tracks/1/path = NodePath("spike7:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(216, -232)]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("spike6:position")
+tracks/2/path = NodePath("spike8:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(200, -232)]
+"values": [Vector2(56, -232)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mo0u5"]
-_data = {
-"RESET": SubResource("Animation_y7lpp"),
-"spikes_moving": SubResource("Animation_tgfq0")
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("spike8:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_hf3nd"]
@@ -255,24 +306,341 @@ tracks/3/keys = {
 "values": [0.0, -3.14159]
 }
 
-[sub_resource type="Animation" id="Animation_lrpfr"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bewdw"]
+_data = {
+"RESET": SubResource("Animation_lrpfr"),
+"spikes_lifting": SubResource("Animation_hf3nd")
+}
+
+[sub_resource type="Animation" id="Animation_c7axe"]
+resource_name = "spikes_jokes"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spike24:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-24, -72), Vector2(-24, -88)]
+}
+
+[sub_resource type="Animation" id="Animation_bdi70"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("spike7:position")
+tracks/0/path = NodePath("spike24:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(72, -232)]
+"values": [Vector2(-24, -72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8w4um"]
+_data = {
+"RESET": SubResource("Animation_bdi70"),
+"spikes_jokes": SubResource("Animation_c7axe")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0revb"]
+size = Vector2(2, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmhjt"]
+size = Vector2(23.25, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n43h1"]
+size = Vector2(4, 48)
+
+[sub_resource type="Animation" id="Animation_uyulo"]
+resource_name = "spikes_rush"
+length = 10.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike9:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(584, -152), Vector2(-363, -152)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("spike7:rotation")
+tracks/1/path = NodePath("../spikes/spike11:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(584, -184), Vector2(-384, -184)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../spikes/spike10:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(584, -168), Vector2(-362, -168)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../spikes/spike12:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(584, -200), Vector2(-371, -200)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../spikes/spike13:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, -152), Vector2(-386, -152)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../spikes/spike14:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(7, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, -168), Vector2(584, -152)]
+}
+
+[sub_resource type="Animation" id="Animation_saglo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike9:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(584, -152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../spikes/spike11:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(584, -184)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../spikes/spike10:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(584, -168)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../spikes/spike12:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(584, -200)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../spikes/spike13:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, -152)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../spikes/spike14:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, -168)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8vaab"]
+_data = {
+"RESET": SubResource("Animation_saglo"),
+"spikes_rush": SubResource("Animation_uyulo")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl5s1"]
+size = Vector2(62, 4)
+
+[sub_resource type="Animation" id="Animation_u718b"]
+resource_name = "zigzag_1"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike15:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(408, -72), Vector2(408, -120), Vector2(408, -72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../spikes/spike15:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -3.14159, -3.14159, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../spikes/spike16:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(392, -72), Vector2(392, -120), Vector2(392, -72)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../spikes/spike16:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 3.14159, 3.14159, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_j0hg0"]
+resource_name = "zigzag_2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike17:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-3.14159, -3.14159, 0.0, 0.0, -3.14159]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../spikes/spike17:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(312, -120), Vector2(312, -72), Vector2(312, -120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../spikes/spike18:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.14159, 3.14159, 0.0, 0.0, 3.14159]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../spikes/spike18:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(296, -120), Vector2(296, -72), Vector2(296, -120)]
+}
+
+[sub_resource type="Animation" id="Animation_mx7gt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike15:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(408, -72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../spikes/spike15:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -284,19 +652,177 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("spike8:position")
+tracks/2/path = NodePath("../spikes/spike16:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(56, -232)]
+"values": [Vector2(392, -72)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("spike8:rotation")
+tracks/3/path = NodePath("../spikes/spike16:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../spikes/spike17:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-3.14159]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../spikes/spike17:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(312, -120)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../spikes/spike18:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../spikes/spike18:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(296, -120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hykn5"]
+_data = {
+"RESET": SubResource("Animation_mx7gt"),
+"zigzag_1": SubResource("Animation_u718b"),
+"zigzag_2": SubResource("Animation_j0hg0")
+}
+
+[sub_resource type="Animation" id="Animation_fgbt6"]
+resource_name = "zigzag_3"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike19:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(264, -72), Vector2(264, -120), Vector2(264, -72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../spikes/spike19:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -3.14159, -3.14159, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../spikes/spike20:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(248, -72), Vector2(248, -120), Vector2(248, -72)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../spikes/spike20:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 3.14159, 3.14159, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_13kqn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike19:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(264, -72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../spikes/spike19:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../spikes/spike20:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, -72)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../spikes/spike20:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -306,20 +832,90 @@ tracks/3/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bewdw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wukj6"]
 _data = {
-"RESET": SubResource("Animation_lrpfr"),
-"spikes_lifting": SubResource("Animation_hf3nd")
+"RESET": SubResource("Animation_13kqn"),
+"zigzag_3": SubResource("Animation_fgbt6")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0revb"]
-size = Vector2(2, 50)
+[sub_resource type="Animation" id="Animation_uqxgg"]
+resource_name = "zigazg_4"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike21:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200, -72), Vector2(162, -72)]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmhjt"]
-size = Vector2(23.25, 43)
+[sub_resource type="Animation" id="Animation_3lwkt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike21:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, -72)]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n43h1"]
-size = Vector2(4, 48)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_084jv"]
+_data = {
+"RESET": SubResource("Animation_3lwkt"),
+"zigazg_4": SubResource("Animation_uqxgg")
+}
+
+[sub_resource type="Animation" id="Animation_mwtag"]
+resource_name = "zigzag_5"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike22:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(88, -72), Vector2(120, -72)]
+}
+
+[sub_resource type="Animation" id="Animation_pu3bc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../spikes/spike22:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(88, -72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bn5d6"]
+_data = {
+"RESET": SubResource("Animation_pu3bc"),
+"zigzag_5": SubResource("Animation_mwtag")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg6nb"]
+size = Vector2(2, 31)
 
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_72lyb")
@@ -353,7 +949,7 @@ offset_bottom = -232.68
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ahwak")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65506, 2, 0, 196638, 2, 0, 30, 2, 0, 65566, 1, 0, 131102, 2, 0, -131042, 0, 0, -1245169, 2, 0, -1245170, 2, 0, -1245171, 2, 0, -1245172, 2, 0, -1245156, 2, 0, -1245157, 2, 0, -1245158, 2, 0, -1245159, 2, 0, -1245160, 2, 0, -1245161, 2, 0, -1245162, 0, 0, -1245163, 0, 0, -1245164, 2, 0, -1245165, 2, 0, -1245166, 2, 0, -1245167, 2, 0, -1245168, 0, 0, -1245155, 2, 0, -1245154, 2, 0, -1179618, 2, 0, -1114082, 0, 0, -1048546, 2, 0, -983010, 2, 0, -917474, 2, 0, -851938, 2, 0, -786402, 2, 0, -720866, 2, 0, -655330, 2, 0, -589794, 2, 0, -524258, 2, 0, -458722, 2, 0, -393186, 2, 0, -327650, 2, 0, -262114, 2, 0, -196578, 2, 0, -1179655, 2, 0, -1179656, 2, 0, -1179654, 2, 0, -1179653, 2, 0, -1179652, 2, 0, -1179651, 2, 0, -1179650, 2, 0, -1179649, 2, 0, -1245184, 2, 0, -1245183, 0, 0, -1245182, 2, 0, -1245181, 2, 0, -1245180, 2, 0, -1245179, 2, 0, -1245178, 2, 0, -1245177, 2, 0, -1245176, 2, 0, -1245175, 2, 0, -1245174, 2, 0, -1245173, 2, 0, 327710, 2, 0, 262174, 2, 0, 393237, 2, 0, 458773, 2, 0, 524309, 2, 0, 589845, 2, 0, 655381, 2, 0, 720917, 2, 0, 786453, 2, 0, 393225, 2, 0, 458761, 2, 0, 524297, 2, 0, 589833, 0, 0, 655369, 0, 0, 720905, 2, 0, 786441, 2, 0, -65505, 2, 0, -65504, 2, 0, -65503, 2, 0, -65502, 2, 0, -65501, 0, 0, -589793, 2, 0, -589792, 2, 0, -589791, 2, 0, -589790, 2, 0, -589789, 2, 0, 524306, 2, 0, 458770, 2, 0, 393234, 2, 0, 393233, 2, 0, 393232, 2, 0, 393231, 2, 0, 393230, 2, 0, 393229, 2, 0, 393228, 2, 0, 393227, 2, 0, 393226, 2, 0, 458762, 2, 0, 524298, 2, 0, 589834, 2, 0, 655370, 2, 0, 720906, 2, 0, 786442, 2, 0, 786443, 2, 0, 720907, 2, 0, 655371, 1, 0, 589835, 2, 0, 524299, 2, 0, 458763, 2, 0, 458764, 2, 0, 524300, 2, 0, 589836, 2, 0, 655372, 1, 0, 720908, 2, 0, 786444, 2, 0, 786445, 2, 0, 720909, 2, 0, 655373, 2, 0, 589837, 2, 0, 524301, 2, 0, 458765, 2, 0, 458766, 2, 0, 524302, 2, 0, 589838, 2, 0, 655374, 2, 0, 720910, 2, 0, 786446, 2, 0, 786447, 2, 0, 720911, 2, 0, 655375, 2, 0, 589839, 2, 0, 524303, 2, 0, 458767, 1, 0, 458768, 2, 0, 524304, 2, 0, 589840, 2, 0, 655376, 2, 0, 720912, 2, 0, 786448, 2, 0, 786449, 2, 0, 720913, 2, 0, 655377, 2, 0, 589841, 0, 0, 524305, 0, 0, 458769, 2, 0, 589842, 0, 0, 655378, 2, 0, 720914, 2, 0, 786450, 2, 0, 786451, 2, 0, 720915, 2, 0, 655379, 2, 0, 589843, 2, 0, 524307, 2, 0, 458771, 2, 0, 393235, 2, 0, 393236, 2, 0, 458772, 2, 0, 524308, 2, 0, 589844, 2, 0, 655380, 2, 0, 720916, 2, 0, 786452, 2, 0, 393247, 2, 0, 327711, 2, 0, 262175, 1, 0, 196639, 2, 0, 131103, 2, 0, 65567, 2, 0, 31, 2, 0, 32, 2, 0, 65568, 2, 0, 131104, 2, 0, 196640, 2, 0, 262176, 2, 0, 327712, 2, 0, 393248, 2, 0, 458784, 2, 0, 458783, 2, 0, 458782, 2, 0, 393246, 2, 0, 393245, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 1, 0, 393238, 2, 0, 458774, 2, 0, 524310, 2, 0, 589846, 2, 0, 655382, 1, 0, 720918, 2, 0, 786454, 2, 0, 786455, 2, 0, 720919, 2, 0, 655383, 2, 0, 589847, 0, 0, 524311, 0, 0, 458775, 2, 0, 458776, 2, 0, 524312, 2, 0, 589848, 0, 0, 655384, 2, 0, 720920, 2, 0, 786456, 2, 0, 786457, 2, 0, 720921, 2, 0, 655385, 2, 0, 589849, 2, 0, 524313, 2, 0, 458777, 2, 0, 458778, 2, 0, 524314, 2, 0, 589850, 2, 0, 655386, 2, 0, 720922, 2, 0, 786458, 2, 0, 786459, 2, 0, 720923, 2, 0, 655387, 2, 0, 589851, 2, 0, 524315, 2, 0, 458779, 2, 0, 458780, 2, 0, 524316, 2, 0, 589852, 0, 0, 655388, 2, 0, 720924, 2, 0, 786460, 2, 0, 786461, 2, 0, 720925, 2, 0, 655389, 2, 0, 589853, 0, 0, 524317, 2, 0, 458781, 2, 0, 524318, 2, 0, 589854, 2, 0, 655390, 2, 0, 720926, 2, 0, 786462, 2, 0, 786463, 2, 0, 720927, 2, 0, 655391, 2, 0, 589855, 1, 0, 524319, 2, 0, 524320, 2, 0, 589856, 2, 0, 655392, 2, 0, 720928, 2, 0, 786464, 2, 0, 786465, 2, 0, 720929, 2, 0, 655393, 2, 0, 589857, 2, 0, 524321, 2, 0, 458785, 2, 0, 393249, 2, 0, 327713, 2, 0, 262177, 0, 0, 196641, 0, 0, 131105, 2, 0, 65569, 2, 0, 33, 2, 0, 34, 2, 0, 65570, 2, 0, 131106, 2, 0, 196642, 2, 0, 262178, 2, 0, 327714, 2, 0, 393250, 2, 0, 458786, 2, 0, 524322, 2, 0, 589858, 2, 0, 655394, 2, 0, 720930, 2, 0, 786466, 2, 0, 786467, 2, 0, 720931, 2, 0, 655395, 2, 0, 589859, 2, 0, 524323, 2, 0, 458787, 2, 0, 393251, 2, 0, 327715, 2, 0, 262179, 2, 0, 196643, 2, 0, 131107, 2, 0, 65571, 2, 0, 35, 2, 0, -524253, 2, 0, -524254, 2, 0, -524255, 2, 0, -524256, 2, 0, -524257, 2, 0, -458721, 2, 0, -393185, 0, 0, -327649, 2, 0, -262113, 2, 0, -196577, 2, 0, -131041, 2, 0, -131040, 2, 0, -196576, 2, 0, -262112, 2, 0, -327648, 2, 0, -393184, 0, 0, -458720, 2, 0, -458719, 2, 0, -393183, 0, 0, -327647, 2, 0, -262111, 2, 0, -196575, 2, 0, -131039, 2, 0, -131038, 2, 0, -196574, 2, 0, -262110, 2, 0, -327646, 2, 0, -393182, 2, 0, -458718, 2, 0, -458717, 2, 0, -393181, 2, 0, -327645, 1, 0, -262109, 2, 0, -196573, 0, 0, -131037, 0, 0, -983005, 2, 0, -1048541, 2, 0, -1114077, 2, 0, -1179613, 0, 0, -1245149, 2, 0, -1245150, 2, 0, -1245151, 2, 0, -1245152, 2, 0, -1245153, 2, 0, -1179617, 2, 0, -1114081, 0, 0, -1048545, 2, 0, -983009, 2, 0, -917473, 2, 0, -851937, 2, 0, -786401, 2, 0, -720865, 2, 0, -655329, 2, 0, -655328, 2, 0, -720864, 2, 0, -786400, 2, 0, -851936, 0, 0, -917472, 2, 0, -983008, 2, 0, -1048544, 2, 0, -1114080, 2, 0, -1179616, 2, 0, -1179615, 2, 0, -1114079, 2, 0, -1048543, 2, 0, -983007, 2, 0, -917471, 2, 0, -851935, 0, 0, -786399, 2, 0, -720863, 1, 0, -655327, 2, 0, -655326, 2, 0, -720862, 2, 0, -786398, 2, 0, -851934, 0, 0, -917470, 2, 0, -983006, 2, 0, -1048542, 2, 0, -1114078, 2, 0, -1179614, 2, 0, -917469, 2, 0, -851933, 2, 0, -786397, 2, 0, -720861, 2, 0, -655325, 2, 0, 720893, 2, 0, 655357, 2, 0, 589821, 2, 0, 524285, 1, 0, 458749, 1, 0, 458748, 2, 0, 458747, 2, 0, 458746, 2, 0, 458745, 1, 0, 458744, 2, 0, 524280, 2, 0, 589816, 2, 0, 655352, 2, 0, 720888, 2, 0, 786424, 2, 0, 851960, 2, 0, 851961, 2, 0, 786425, 2, 0, 720889, 0, 0, 655353, 2, 0, 589817, 2, 0, 524281, 1, 0, 524282, 1, 0, 589818, 2, 0, 655354, 2, 0, 720890, 0, 0, 786426, 2, 0, 851962, 2, 0, 851963, 2, 0, 786427, 2, 0, 720891, 0, 0, 655355, 0, 0, 589819, 2, 0, 524283, 2, 0, 524284, 2, 0, 589820, 2, 0, 655356, 2, 0, 720892, 2, 0, 786428, 2, 0, 851964, 2, 0, 851965, 2, 0, 786429, 2, 0, 786430, 2, 0, 720894, 2, 0, 655358, 2, 0, 589822, 2, 0, 524286, 2, 0, 458750, 2, 0, 458751, 2, 0, 524287, 2, 0, 589823, 2, 0, 655359, 1, 0, 720895, 2, 0, 786431, 2, 0, 851967, 2, 0, 851966, 2, 0, 786432, 2, 0, 720896, 2, 0, 655360, 2, 0, 589824, 2, 0, 524288, 2, 0, 458752, 2, 0, 393216, 2, 0, 393217, 2, 0, 458753, 2, 0, 524289, 2, 0, 589825, 2, 0, 655361, 2, 0, 720897, 2, 0, 786433, 2, 0, 786434, 2, 0, 720898, 2, 0, 655362, 2, 0, 589826, 2, 0, 524290, 2, 0, 458754, 2, 0, 393218, 2, 0, 393219, 2, 0, 458755, 1, 0, 524291, 0, 0, 589827, 2, 0, 655363, 2, 0, 720899, 2, 0, 786435, 2, 0, 786436, 2, 0, 720900, 2, 0, 655364, 0, 0, 589828, 0, 0, 524292, 2, 0, 458756, 2, 0, 393220, 2, 0, 393221, 2, 0, 458757, 2, 0, 524293, 2, 0, 589829, 1, 0, 655365, 2, 0, 720901, 2, 0, 786437, 2, 0, 786438, 2, 0, 720902, 2, 0, 655366, 2, 0, 589830, 2, 0, 524294, 2, 0, 458758, 2, 0, 393222, 2, 0, 393223, 2, 0, 458759, 2, 0, 524295, 2, 0, 589831, 2, 0, 655367, 2, 0, 720903, 2, 0, 786439, 2, 0, 786440, 2, 0, 720904, 2, 0, 655368, 2, 0, 589832, 2, 0, 524296, 2, 0, 458760, 2, 0, 393224, 2, 0, 393199, 2, 0, 393198, 2, 0, 393197, 1, 0, 393196, 2, 0, 393195, 2, 0, 393194, 2, 0, -262161, 2, 0, -262162, 2, 0, -262163, 2, 0, -262164, 0, 0, -262165, 0, 0, -262166, 0, 0, -1114129, 2, 0, -1245186, 2, 0, -1310722, 2, 0, -1376258, 2, 0, -1441794, 2, 0, -1507331, 2, 0, -1310702, 2, 0, -1376238, 2, 0, -1441775, 2, 0, -1507311, 2, 0, -1572847, 2, 0, -1310685, 2, 0, -1376221, 2, 0, -1441757, 2, 0, -1507293, 2, 0, -1572829, 2, 0, 655348, 2, 0, 589812, 2, 0, 524276, 2, 0, 458740, 2, 0, 458738, 2, 0, 458737, 2, 0, 458736, 2, 0, 458735, 2, 0, 458734, 2, 0, 458733, 2, 0, 458732, 2, 0, 458731, 2, 0, 458730, 2, 0, 524266, 2, 0, 589802, 2, 0, 655338, 2, 0, 720874, 2, 0, 786410, 2, 0, 851946, 2, 0, 851947, 2, 0, 786411, 2, 0, 720875, 2, 0, 655339, 2, 0, 589803, 2, 0, 524267, 2, 0, 524268, 2, 0, 589804, 0, 0, 655340, 0, 0, 720876, 2, 0, 786412, 2, 0, 851948, 2, 0, 851949, 2, 0, 786413, 2, 0, 720877, 2, 0, 655341, 2, 0, 589805, 0, 0, 524269, 0, 0, 524270, 0, 0, 589806, 2, 0, 655342, 2, 0, 720878, 2, 0, 786414, 2, 0, 851950, 2, 0, 851951, 2, 0, 786415, 2, 0, 720879, 2, 0, 655343, 2, 0, 589807, 2, 0, 524271, 2, 0, 524272, 2, 0, 589808, 2, 0, 655344, 2, 0, 720880, 2, 0, 786416, 2, 0, 851952, 2, 0, 851953, 2, 0, 786417, 2, 0, 720881, 2, 0, 655345, 2, 0, 589809, 2, 0, 524273, 2, 0, 524274, 2, 0, 589810, 1, 0, 655346, 1, 0, 720882, 2, 0, 786418, 2, 0, 851954, 2, 0, 851955, 2, 0, 786419, 2, 0, 720883, 2, 0, 655347, 2, 0, 589811, 2, 0, 524275, 0, 0, 458739, 1, 0, 720884, 2, 0, 786420, 2, 0, 851956, 2, 0, 851957, 2, 0, 786421, 2, 0, 720885, 2, 0, 655349, 2, 0, 589813, 2, 0, 524277, 2, 0, 458741, 2, 0, 458742, 2, 0, 524278, 2, 0, 589814, 0, 0, 655350, 2, 0, 720886, 2, 0, 786422, 2, 0, 851958, 2, 0, 851959, 2, 0, 786423, 2, 0, 720887, 2, 0, 655351, 2, 0, 589815, 2, 0, 524279, 2, 0, 458743, 2, 0, -196630, 2, 0, -131094, 2, 0, -65558, 2, 0, -22, 2, 0, 65514, 2, 0, 131050, 2, 0, 196586, 2, 0, 262122, 2, 0, 327658, 2, 0, 327659, 2, 0, 262123, 2, 0, 196587, 2, 0, 131051, 2, 0, 65515, 2, 0, -21, 2, 0, -65557, 2, 0, -131093, 2, 0, -196629, 2, 0, -196628, 0, 0, -131092, 2, 0, -65556, 2, 0, -20, 2, 0, 65516, 2, 0, 131052, 0, 0, 196588, 2, 0, 262124, 2, 0, 327660, 2, 0, 327661, 2, 0, 262125, 2, 0, 196589, 2, 0, 131053, 1, 0, 65517, 1, 0, -19, 2, 0, -65555, 2, 0, -131091, 2, 0, -196627, 2, 0, -196626, 2, 0, -131090, 2, 0, -65554, 2, 0, -18, 2, 0, 65518, 2, 0, 131054, 2, 0, 196590, 2, 0, 262126, 2, 0, 327662, 2, 0, 327663, 2, 0, 262127, 2, 0, 196591, 2, 0, 131055, 2, 0, 65519, 2, 0, -17, 2, 0, -65553, 2, 0, -131089, 2, 0, -196625, 2, 0, -1048593, 1, 0, -1048594, 2, 0, -1114130, 2, 0, -1179666, 2, 0, -1245202, 1, 0, -1310738, 2, 0, -1376274, 2, 0, -1441810, 2, 0, -1507346, 2, 0, -1507350, 2, 0, -1441814, 2, 0, -1376278, 2, 0, -1310742, 2, 0, -1245206, 2, 0, -1179670, 2, 0, -1114134, 2, 0, -1048598, 2, 0, -983062, 2, 0, -917526, 2, 0, -851990, 2, 0, -786454, 2, 0, -720918, 2, 0, -655382, 2, 0, -589846, 2, 0, -524310, 2, 0, -458774, 2, 0, -393238, 2, 0, -327702, 2, 0, -327701, 2, 0, -393237, 2, 0, -458773, 2, 0, -524309, 0, 0, -589845, 0, 0, -655381, 2, 0, -720917, 2, 0, -786453, 2, 0, -851989, 2, 0, -917525, 2, 0, -983061, 2, 0, -1048597, 2, 0, -1114133, 2, 0, -1179669, 2, 0, -1245205, 2, 0, -1310741, 2, 0, -1376277, 2, 0, -1441813, 2, 0, -1507349, 2, 0, -1507348, 2, 0, -1441812, 2, 0, -1376276, 2, 0, -1310740, 2, 0, -1245204, 2, 0, -1179668, 2, 0, -1114132, 2, 0, -1048596, 2, 0, -983060, 2, 0, -917524, 2, 0, -851988, 2, 0, -786452, 2, 0, -720916, 2, 0, -655380, 2, 0, -589844, 0, 0, -524308, 2, 0, -458772, 2, 0, -393236, 2, 0, -327700, 2, 0, -327699, 2, 0, -393235, 2, 0, -458771, 2, 0, -524307, 2, 0, -589843, 2, 0, -655379, 2, 0, -720915, 2, 0, -786451, 2, 0, -851987, 2, 0, -917523, 2, 0, -983059, 2, 0, -1048595, 2, 0, -1114131, 2, 0, -1179667, 2, 0, -1245203, 2, 0, -1310739, 2, 0, -1376275, 2, 0, -1441811, 2, 0, -1507347, 2, 0, -983058, 2, 0, -917522, 2, 0, -851986, 2, 0, -786450, 0, 0, -720914, 2, 0, -655378, 2, 0, -589842, 2, 0, -524306, 2, 0, -458770, 2, 0, -393234, 0, 0, -327698, 2, 0, -327697, 2, 0, -393233, 0, 0, -458769, 2, 0, -524305, 2, 0, -589841, 2, 0, -655377, 2, 0, -720913, 2, 0, -786449, 0, 0, -851985, 2, 0, -917521, 2, 0, -983057, 2, 0, -1507345, 2, 0, -1441809, 2, 0, -1376273, 2, 0, -1310737, 2, 0, -1245201, 1, 0, -1179665, 2, 0, -1179664, 2, 0, -1245200, 2, 0, -1310736, 2, 0, -1376272, 2, 0, -1441808, 2, 0, -1507344, 2, 0, -1507343, 2, 0, -1441807, 2, 0, -1376271, 2, 0, -1310735, 2, 0, -1245199, 2, 0, -1179663, 2, 0, -1179662, 2, 0, -1245198, 2, 0, -1310734, 2, 0, -1376270, 2, 0, -1441806, 2, 0, -1507342, 2, 0, -1507341, 2, 0, -1441805, 2, 0, -1376269, 2, 0, -1310733, 2, 0, -1245197, 2, 0, -1179661, 0, 0, -1179660, 0, 0, -1245196, 2, 0, -1310732, 2, 0, -1376268, 2, 0, -1441804, 2, 0, -1507340, 2, 0, -1507339, 2, 0, -1441803, 2, 0, -1376267, 2, 0, -1310731, 2, 0, -1245195, 2, 0, -1179659, 2, 0, -1179658, 2, 0, -1245194, 2, 0, -1310730, 2, 0, -1376266, 2, 0, -1441802, 2, 0, -1507338, 2, 0, -1507337, 2, 0, -1441801, 2, 0, -1376265, 2, 0, -1310729, 2, 0, -1245193, 1, 0, -1179657, 2, 0, -1245192, 2, 0, -1310728, 2, 0, -1376264, 2, 0, -1441800, 2, 0, -1507336, 2, 0, -1507335, 2, 0, -1441799, 2, 0, -1376263, 2, 0, -1310727, 2, 0, -1245191, 2, 0, -1245190, 2, 0, -1310726, 2, 0, -1376262, 2, 0, -1441798, 2, 0, -1507334, 2, 0, -1507333, 2, 0, -1441797, 2, 0, -1376261, 2, 0, -1310725, 2, 0, -1245189, 2, 0, -1245188, 2, 0, -1310724, 2, 0, -1376260, 2, 0, -1441796, 2, 0, -1507332, 2, 0, -1441795, 2, 0, -1376259, 2, 0, -1310723, 2, 0, -1245187, 2, 0, -1441784, 2, 0, -1507320, 2, 0, -1572856, 2, 0, -1507330, 2, 0, -1507329, 2, 0, -1572864, 2, 0, -1507328, 2, 0, -1441793, 2, 0, -1376257, 2, 0, -1310721, 2, 0, -1245185, 2, 0, -1310720, 2, 0, -1376256, 2, 0, -1441792, 2, 0, -1441791, 2, 0, -1507327, 2, 0, -1572863, 2, 0, -1572862, 2, 0, -1507326, 2, 0, -1441790, 2, 0, -1376254, 2, 0, -1376255, 2, 0, -1310719, 1, 0, -1310718, 2, 0, -1310717, 2, 0, -1376253, 2, 0, -1441789, 2, 0, -1507325, 2, 0, -1572861, 2, 0, -1572860, 2, 0, -1507324, 0, 0, -1441788, 2, 0, -1376252, 2, 0, -1310716, 2, 0, -1310715, 2, 0, -1376251, 2, 0, -1441787, 2, 0, -1507323, 0, 0, -1572859, 2, 0, -1572858, 2, 0, -1507322, 0, 0, -1441786, 2, 0, -1376250, 2, 0, -1310714, 2, 0, -1310713, 2, 0, -1376249, 2, 0, -1441785, 2, 0, -1507321, 0, 0, -1572857, 2, 0, -1376248, 2, 0, -1310712, 2, 0, -1310711, 2, 0, -1376247, 2, 0, -1441783, 2, 0, -1507319, 2, 0, -1572855, 2, 0, -1572854, 2, 0, -1507318, 2, 0, -1441782, 2, 0, -1376246, 2, 0, -1310710, 2, 0, -1310709, 2, 0, -1376245, 2, 0, -1441781, 2, 0, -1507317, 2, 0, -1572853, 2, 0, -1572852, 2, 0, -1507316, 2, 0, -1441780, 2, 0, -1376244, 2, 0, -1310708, 1, 0, -1310707, 2, 0, -1376243, 2, 0, -1441779, 2, 0, -1507315, 2, 0, -1572851, 2, 0, -1572850, 2, 0, -1507314, 2, 0, -1441778, 2, 0, -1376242, 2, 0, -1310706, 2, 0, -1310705, 0, 0, -1376241, 2, 0, -1441777, 2, 0, -1507313, 2, 0, -1572849, 2, 0, -1572848, 2, 0, -1507312, 2, 0, -1441776, 2, 0, -1376240, 2, 0, -1310704, 0, 0, -1310703, 2, 0, -1376239, 2, 0, -1572846, 2, 0, -1507310, 2, 0, -1441774, 2, 0, -1441773, 2, 0, -1507309, 2, 0, -1572845, 2, 0, -1572844, 2, 0, -1507308, 2, 0, -1441772, 2, 0, -1376236, 2, 0, -1376237, 2, 0, -1310701, 2, 0, -1310700, 2, 0, -1310699, 2, 0, -1376235, 2, 0, -1441771, 2, 0, -1507307, 2, 0, -1572843, 2, 0, -1572842, 2, 0, -1507306, 2, 0, -1441770, 2, 0, -1376234, 2, 0, -1310698, 2, 0, -1310697, 2, 0, -1376233, 2, 0, -1441769, 2, 0, -1507305, 2, 0, -1572841, 2, 0, -1572840, 2, 0, -1507304, 0, 0, -1441768, 0, 0, -1376232, 2, 0, -1310696, 2, 0, -1310695, 2, 0, -1376231, 2, 0, -1441767, 2, 0, -1507303, 0, 0, -1572839, 2, 0, -1572838, 2, 0, -1507302, 2, 0, -1441766, 2, 0, -1376230, 2, 0, -1310694, 2, 0, -1310693, 2, 0, -1376229, 2, 0, -1441765, 2, 0, -1507301, 2, 0, -1572837, 2, 0, -1572836, 2, 0, -1507300, 2, 0, -1441764, 2, 0, -1376228, 2, 0, -1310692, 2, 0, -1310691, 2, 0, -1376227, 2, 0, -1441763, 2, 0, -1507299, 2, 0, -1572835, 2, 0, -1572834, 2, 0, -1507298, 2, 0, -1441762, 2, 0, -1376226, 2, 0, -1310690, 1, 0, -1310689, 2, 0, -1376225, 2, 0, -1441761, 2, 0, -1507297, 2, 0, -1572833, 2, 0, -1572832, 2, 0, -1507296, 2, 0, -1441760, 2, 0, -1376224, 2, 0, -1310688, 2, 0, -1310687, 2, 0, -1376223, 2, 0, -1441759, 2, 0, -1507295, 2, 0, -1572831, 2, 0, -1572830, 2, 0, -1507294, 2, 0, -1441758, 2, 0, -1376222, 2, 0, -1310686, 2, 0, -917479, 2, 0, -917478, 2, 0, -917477, 2, 0, -917476, 2, 0, -917475, 2, 0, -851980, 2, 0, -851979, 2, 0, -851978, 2, 0, -851977, 2, 0, -851976, 2, 0, -851975, 2, 0, -851974, 2, 0, -851973, 2, 0, -851972, 2, 0, -851971, 2, 0, -851970, 2, 0, -851969, 2, 0, -917504, 2, 0, -917503, 2, 0, -917502, 2, 0, -917501, 2, 0, -917500, 2, 0, -917499, 2, 0, -917498, 2, 0, -917497, 2, 0, -917496, 2, 0, -917495, 2, 0, -917494, 2, 0, -917493, 2, 0, -917492, 2, 0, -917491, 2, 0, -917490, 2, 0, -917489, 2, 0, -917488, 2, 0, -917487, 2, 0, -917486, 2, 0, -917485, 2, 0, -917484, 2, 0, -917483, 2, 0, -917482, 2, 0, -917481, 2, 0, -917480, 2, 0, -524304, 2, 0, -524303, 2, 0, -524302, 2, 0, -524301, 2, 0, -524300, 2, 0, -524299, 2, 0, -524298, 2, 0, -524297, 2, 0, -524296, 2, 0, -524295, 2, 0, -524294, 2, 0, -524293, 2, 0, -524292, 2, 0, -524291, 2, 0, -524290, 2, 0, -524289, 2, 0, -589824, 2, 0, -589823, 2, 0, -589822, 2, 0, -589821, 2, 0, -589820, 2, 0, -589819, 2, 0, -589818, 2, 0, -589817, 2, 0, -589816, 2, 0, -589815, 2, 0, -589814, 2, 0, -589813, 2, 0, -589812, 2, 0, -589811, 2, 0, -589810, 2, 0, -589809, 2, 0, -589808, 2, 0, -589807, 2, 0, -589806, 2, 0, -589805, 2, 0, -589804, 2, 0, -589803, 2, 0, -589802, 2, 0, -589801, 2, 0, -589800, 2, 0, -589799, 2, 0, 131056, 2, 0, 131057, 2, 0, 131058, 2, 0, 131059, 2, 0, 131060, 2, 0, 131061, 2, 0, 131062, 2, 0, 131063, 2, 0, 131064, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 65552, 2, 0, 65553, 2, 0, 65554, 2, 0, 65555, 2, 0, 65556, 2, 0, 65557, 2, 0, 65558, 2, 0, 65559, 2, 0, 65560, 2, 0, 65561, 2, 0, -196620, 2, 0, -196619, 2, 0, -196618, 2, 0, -196617, 2, 0, -196616, 2, 0, -196615, 2, 0, -196614, 2, 0, -196613, 2, 0, -196612, 2, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 2, 0, -262140, 2, 0, -262139, 2, 0, -262138, 2, 0, -262137, 2, 0, -262136, 2, 0, -262135, 2, 0, -262134, 2, 0, -262133, 2, 0, -262132, 2, 0, -262131, 2, 0, -262130, 2, 0, -262129, 2, 0, -262128, 2, 0, -262127, 2, 0, -262126, 2, 0, -262125, 2, 0, -262124, 2, 0, -262123, 2, 0, -262122, 2, 0, -262121, 2, 0, -262120, 2, 0, -262119, 2, 0, -262118, 2, 0, -262117, 2, 0, -262116, 2, 0, -262115, 2, 0)
+layer_0/tile_data = PackedInt32Array(-65506, 2, 0, 196638, 2, 0, 30, 2, 0, 65566, 1, 0, 131102, 2, 0, -131042, 0, 0, -1245169, 2, 0, -1245170, 2, 0, -1245171, 2, 0, -1245172, 2, 0, -1245156, 2, 0, -1245157, 2, 0, -1245158, 2, 0, -1245159, 2, 0, -1245160, 2, 0, -1245161, 2, 0, -1245162, 0, 0, -1245163, 0, 0, -1245164, 2, 0, -1245165, 2, 0, -1245166, 2, 0, -1245167, 2, 0, -1245168, 0, 0, -1245155, 2, 0, -1245154, 2, 0, -1179618, 2, 0, -1114082, 0, 0, -1048546, 2, 0, -983010, 2, 0, -917474, 2, 0, -851938, 2, 0, -786402, 2, 0, -720866, 2, 0, -655330, 2, 0, -589794, 2, 0, -524258, 2, 0, -458722, 2, 0, -393186, 2, 0, -327650, 2, 0, -262114, 2, 0, -196578, 2, 0, -1179655, 2, 0, -1179656, 2, 0, -1179654, 2, 0, -1179653, 2, 0, -1179652, 2, 0, -1179651, 2, 0, -1179650, 2, 0, -1179649, 2, 0, -1245184, 2, 0, -1245183, 0, 0, -1245182, 2, 0, -1245181, 2, 0, -1245180, 2, 0, -1245179, 2, 0, -1245178, 2, 0, -1245177, 2, 0, -1245176, 2, 0, -1245175, 2, 0, -1245174, 2, 0, -1245173, 2, 0, 327710, 2, 0, 262174, 2, 0, 393237, 2, 0, 458773, 2, 0, 524309, 2, 0, 589845, 2, 0, 655381, 2, 0, 720917, 2, 0, 786453, 2, 0, 393225, 2, 0, 458761, 2, 0, 524297, 2, 0, 589833, 0, 0, 655369, 0, 0, 720905, 2, 0, 786441, 2, 0, -65505, 2, 0, -65504, 2, 0, -65503, 2, 0, -65502, 2, 0, -65501, 0, 0, -589793, 2, 0, -589792, 2, 0, -589791, 2, 0, -589790, 2, 0, -589789, 2, 0, 524306, 2, 0, 458770, 2, 0, 393234, 2, 0, 393233, 2, 0, 393232, 2, 0, 393231, 2, 0, 393230, 2, 0, 393229, 2, 0, 393228, 2, 0, 393227, 2, 0, 393226, 2, 0, 458762, 2, 0, 524298, 2, 0, 589834, 2, 0, 655370, 2, 0, 720906, 2, 0, 786442, 2, 0, 786443, 2, 0, 720907, 2, 0, 655371, 1, 0, 589835, 2, 0, 524299, 2, 0, 458763, 2, 0, 458764, 2, 0, 524300, 2, 0, 589836, 2, 0, 655372, 1, 0, 720908, 2, 0, 786444, 2, 0, 786445, 2, 0, 720909, 2, 0, 655373, 2, 0, 589837, 2, 0, 524301, 2, 0, 458765, 2, 0, 458766, 2, 0, 524302, 2, 0, 589838, 2, 0, 655374, 2, 0, 720910, 2, 0, 786446, 2, 0, 786447, 2, 0, 720911, 2, 0, 655375, 2, 0, 589839, 2, 0, 524303, 2, 0, 458767, 1, 0, 458768, 2, 0, 524304, 2, 0, 589840, 2, 0, 655376, 2, 0, 720912, 2, 0, 786448, 2, 0, 786449, 2, 0, 720913, 2, 0, 655377, 2, 0, 589841, 0, 0, 524305, 0, 0, 458769, 2, 0, 589842, 0, 0, 655378, 2, 0, 720914, 2, 0, 786450, 2, 0, 786451, 2, 0, 720915, 2, 0, 655379, 2, 0, 589843, 2, 0, 524307, 2, 0, 458771, 2, 0, 393235, 2, 0, 393236, 2, 0, 458772, 2, 0, 524308, 2, 0, 589844, 2, 0, 655380, 2, 0, 720916, 2, 0, 786452, 2, 0, 393247, 2, 0, 327711, 2, 0, 262175, 1, 0, 196639, 2, 0, 131103, 2, 0, 65567, 2, 0, 31, 2, 0, 32, 2, 0, 65568, 2, 0, 131104, 2, 0, 196640, 2, 0, 262176, 2, 0, 327712, 2, 0, 393248, 2, 0, 458784, 2, 0, 458783, 2, 0, 458782, 2, 0, 393246, 2, 0, 393245, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 1, 0, 393238, 2, 0, 458774, 2, 0, 524310, 2, 0, 589846, 2, 0, 655382, 1, 0, 720918, 2, 0, 786454, 2, 0, 786455, 2, 0, 720919, 2, 0, 655383, 2, 0, 589847, 0, 0, 524311, 0, 0, 458775, 2, 0, 458776, 2, 0, 524312, 2, 0, 589848, 0, 0, 655384, 2, 0, 720920, 2, 0, 786456, 2, 0, 786457, 2, 0, 720921, 2, 0, 655385, 2, 0, 589849, 2, 0, 524313, 2, 0, 458777, 2, 0, 458778, 2, 0, 524314, 2, 0, 589850, 2, 0, 655386, 2, 0, 720922, 2, 0, 786458, 2, 0, 786459, 2, 0, 720923, 2, 0, 655387, 2, 0, 589851, 2, 0, 524315, 2, 0, 458779, 2, 0, 458780, 2, 0, 524316, 2, 0, 589852, 0, 0, 655388, 2, 0, 720924, 2, 0, 786460, 2, 0, 786461, 2, 0, 720925, 2, 0, 655389, 2, 0, 589853, 0, 0, 524317, 2, 0, 458781, 2, 0, 524318, 2, 0, 589854, 2, 0, 655390, 2, 0, 720926, 2, 0, 786462, 2, 0, 786463, 2, 0, 720927, 2, 0, 655391, 2, 0, 589855, 1, 0, 524319, 2, 0, 524320, 2, 0, 589856, 2, 0, 655392, 2, 0, 720928, 2, 0, 786464, 2, 0, 786465, 2, 0, 720929, 2, 0, 655393, 2, 0, 589857, 2, 0, 524321, 2, 0, 458785, 2, 0, 393249, 2, 0, 327713, 2, 0, 262177, 0, 0, 196641, 0, 0, 131105, 2, 0, 65569, 2, 0, 33, 2, 0, 34, 2, 0, 65570, 2, 0, 131106, 2, 0, 196642, 2, 0, 262178, 2, 0, 327714, 2, 0, 393250, 2, 0, 458786, 2, 0, 524322, 2, 0, 589858, 2, 0, 655394, 2, 0, 720930, 2, 0, 786466, 2, 0, 786467, 2, 0, 720931, 2, 0, 655395, 2, 0, 589859, 2, 0, 524323, 2, 0, 458787, 2, 0, 393251, 2, 0, 327715, 2, 0, 262179, 2, 0, 196643, 2, 0, 131107, 2, 0, 65571, 2, 0, 35, 2, 0, -524253, 2, 0, -524254, 2, 0, -524255, 2, 0, -524256, 2, 0, -524257, 2, 0, -458721, 2, 0, -393185, 0, 0, -327649, 2, 0, -262113, 2, 0, -196577, 2, 0, -131041, 2, 0, -131040, 2, 0, -196576, 2, 0, -262112, 2, 0, -327648, 2, 0, -393184, 0, 0, -458720, 2, 0, -458719, 2, 0, -393183, 0, 0, -327647, 2, 0, -262111, 2, 0, -196575, 2, 0, -131039, 2, 0, -131038, 2, 0, -196574, 2, 0, -262110, 2, 0, -327646, 2, 0, -393182, 2, 0, -458718, 2, 0, -458717, 2, 0, -393181, 2, 0, -327645, 1, 0, -262109, 2, 0, -196573, 0, 0, -131037, 0, 0, -983005, 2, 0, -1048541, 2, 0, -1114077, 2, 0, -1179613, 0, 0, -1245149, 2, 0, -1245150, 2, 0, -1245151, 2, 0, -1245152, 2, 0, -1245153, 2, 0, -1179617, 2, 0, -1114081, 0, 0, -1048545, 2, 0, -983009, 2, 0, -917473, 2, 0, -851937, 2, 0, -786401, 2, 0, -720865, 2, 0, -655329, 2, 0, -655328, 2, 0, -720864, 2, 0, -786400, 2, 0, -851936, 0, 0, -917472, 2, 0, -983008, 2, 0, -1048544, 2, 0, -1114080, 2, 0, -1179616, 2, 0, -1179615, 2, 0, -1114079, 2, 0, -1048543, 2, 0, -983007, 2, 0, -917471, 2, 0, -851935, 0, 0, -786399, 2, 0, -720863, 1, 0, -655327, 2, 0, -655326, 2, 0, -720862, 2, 0, -786398, 2, 0, -851934, 0, 0, -917470, 2, 0, -983006, 2, 0, -1048542, 2, 0, -1114078, 2, 0, -1179614, 2, 0, -917469, 2, 0, -851933, 2, 0, -786397, 2, 0, -720861, 2, 0, -655325, 2, 0, 720893, 2, 0, 655357, 2, 0, 589821, 2, 0, 524285, 1, 0, 458749, 1, 0, 458748, 2, 0, 458747, 2, 0, 458746, 2, 0, 458745, 1, 0, 458744, 2, 0, 524280, 2, 0, 589816, 2, 0, 655352, 2, 0, 720888, 2, 0, 786424, 2, 0, 851960, 2, 0, 851961, 2, 0, 786425, 2, 0, 720889, 0, 0, 655353, 2, 0, 589817, 2, 0, 524281, 1, 0, 524282, 1, 0, 589818, 2, 0, 655354, 2, 0, 720890, 0, 0, 786426, 2, 0, 851962, 2, 0, 851963, 2, 0, 786427, 2, 0, 720891, 0, 0, 655355, 0, 0, 589819, 2, 0, 524283, 2, 0, 524284, 2, 0, 589820, 2, 0, 655356, 2, 0, 720892, 2, 0, 786428, 2, 0, 851964, 2, 0, 851965, 2, 0, 786429, 2, 0, 786430, 2, 0, 720894, 2, 0, 655358, 2, 0, 589822, 2, 0, 524286, 2, 0, 458750, 2, 0, 458751, 2, 0, 524287, 2, 0, 589823, 2, 0, 655359, 1, 0, 720895, 2, 0, 786431, 2, 0, 851967, 2, 0, 851966, 2, 0, 786432, 2, 0, 720896, 2, 0, 655360, 2, 0, 589824, 2, 0, 524288, 2, 0, 458752, 2, 0, 393216, 2, 0, 393217, 2, 0, 458753, 2, 0, 524289, 2, 0, 589825, 2, 0, 655361, 2, 0, 720897, 2, 0, 786433, 2, 0, 786434, 2, 0, 720898, 2, 0, 655362, 2, 0, 589826, 2, 0, 524290, 2, 0, 458754, 2, 0, 393218, 2, 0, 393219, 2, 0, 458755, 1, 0, 524291, 0, 0, 589827, 2, 0, 655363, 2, 0, 720899, 2, 0, 786435, 2, 0, 786436, 2, 0, 720900, 2, 0, 655364, 0, 0, 589828, 0, 0, 524292, 2, 0, 458756, 2, 0, 393220, 2, 0, 393221, 2, 0, 458757, 2, 0, 524293, 2, 0, 589829, 1, 0, 655365, 2, 0, 720901, 2, 0, 786437, 2, 0, 786438, 2, 0, 720902, 2, 0, 655366, 2, 0, 589830, 2, 0, 524294, 2, 0, 458758, 2, 0, 393222, 2, 0, 393223, 2, 0, 458759, 2, 0, 524295, 2, 0, 589831, 2, 0, 655367, 2, 0, 720903, 2, 0, 786439, 2, 0, 786440, 2, 0, 720904, 2, 0, 655368, 2, 0, 589832, 2, 0, 524296, 2, 0, 458760, 2, 0, 393224, 2, 0, 393199, 2, 0, 393198, 2, 0, 393197, 1, 0, 393196, 2, 0, 393195, 2, 0, 393194, 2, 0, -262161, 2, 0, -262162, 2, 0, -262163, 2, 0, -262164, 0, 0, -262165, 0, 0, -262166, 0, 0, -1114129, 2, 0, -1245186, 2, 0, -1310722, 2, 0, -1376258, 2, 0, -1441794, 2, 0, -1507331, 2, 0, -1310702, 2, 0, -1376238, 2, 0, -1441775, 2, 0, -1507311, 2, 0, -1572847, 2, 0, -1310685, 2, 0, -1376221, 2, 0, -1441757, 2, 0, -1507293, 2, 0, -1572829, 2, 0, 655348, 2, 0, 589812, 2, 0, 524276, 2, 0, 458740, 2, 0, 458738, 2, 0, 458737, 2, 0, 458736, 2, 0, 458735, 2, 0, 458734, 2, 0, 458733, 2, 0, 458732, 2, 0, 458731, 2, 0, 458730, 2, 0, 524266, 2, 0, 589802, 2, 0, 655338, 2, 0, 720874, 2, 0, 786410, 2, 0, 851946, 2, 0, 851947, 2, 0, 786411, 2, 0, 720875, 2, 0, 655339, 2, 0, 589803, 2, 0, 524267, 2, 0, 524268, 2, 0, 589804, 0, 0, 655340, 0, 0, 720876, 2, 0, 786412, 2, 0, 851948, 2, 0, 851949, 2, 0, 786413, 2, 0, 720877, 2, 0, 655341, 2, 0, 589805, 0, 0, 524269, 0, 0, 524270, 0, 0, 589806, 2, 0, 655342, 2, 0, 720878, 2, 0, 786414, 2, 0, 851950, 2, 0, 851951, 2, 0, 786415, 2, 0, 720879, 2, 0, 655343, 2, 0, 589807, 2, 0, 524271, 2, 0, 524272, 2, 0, 589808, 2, 0, 655344, 2, 0, 720880, 2, 0, 786416, 2, 0, 851952, 2, 0, 851953, 2, 0, 786417, 2, 0, 720881, 2, 0, 655345, 2, 0, 589809, 2, 0, 524273, 2, 0, 524274, 2, 0, 589810, 1, 0, 655346, 1, 0, 720882, 2, 0, 786418, 2, 0, 851954, 2, 0, 851955, 2, 0, 786419, 2, 0, 720883, 2, 0, 655347, 2, 0, 589811, 2, 0, 524275, 0, 0, 458739, 1, 0, 720884, 2, 0, 786420, 2, 0, 851956, 2, 0, 851957, 2, 0, 786421, 2, 0, 720885, 2, 0, 655349, 2, 0, 589813, 2, 0, 524277, 2, 0, 458741, 2, 0, 458742, 2, 0, 524278, 2, 0, 589814, 0, 0, 655350, 2, 0, 720886, 2, 0, 786422, 2, 0, 851958, 2, 0, 851959, 2, 0, 786423, 2, 0, 720887, 2, 0, 655351, 2, 0, 589815, 2, 0, 524279, 2, 0, 458743, 2, 0, -196630, 2, 0, -131094, 2, 0, -65558, 2, 0, -22, 2, 0, 65514, 2, 0, 131050, 2, 0, 196586, 2, 0, 262122, 2, 0, 327658, 2, 0, 327659, 2, 0, 262123, 2, 0, 196587, 2, 0, 131051, 2, 0, 65515, 2, 0, -21, 2, 0, -65557, 2, 0, -131093, 2, 0, -196629, 2, 0, -196628, 0, 0, -131092, 2, 0, -65556, 2, 0, -20, 2, 0, 65516, 2, 0, 131052, 0, 0, 196588, 2, 0, 262124, 2, 0, 327660, 2, 0, 327661, 2, 0, 262125, 2, 0, 196589, 2, 0, 131053, 1, 0, 65517, 1, 0, -19, 2, 0, -65555, 2, 0, -131091, 2, 0, -196627, 2, 0, -196626, 2, 0, -131090, 2, 0, -65554, 2, 0, -18, 2, 0, 65518, 2, 0, 131054, 2, 0, 196590, 2, 0, 262126, 2, 0, 327662, 2, 0, 327663, 2, 0, 262127, 2, 0, 196591, 2, 0, 131055, 2, 0, 65519, 2, 0, -17, 2, 0, -65553, 2, 0, -131089, 2, 0, -196625, 2, 0, -1048593, 1, 0, -1048594, 2, 0, -1114130, 2, 0, -1179666, 2, 0, -1245202, 1, 0, -1310738, 2, 0, -1376274, 2, 0, -1441810, 2, 0, -1507346, 2, 0, -1507350, 2, 0, -1441814, 2, 0, -1376278, 2, 0, -1310742, 2, 0, -1245206, 2, 0, -1179670, 2, 0, -1114134, 2, 0, -1048598, 2, 0, -983062, 2, 0, -917526, 2, 0, -851990, 2, 0, -786454, 2, 0, -720918, 2, 0, -655382, 2, 0, -589846, 2, 0, -524310, 2, 0, -458774, 2, 0, -393238, 2, 0, -327702, 2, 0, -327701, 2, 0, -393237, 2, 0, -458773, 2, 0, -524309, 0, 0, -589845, 0, 0, -655381, 2, 0, -720917, 2, 0, -786453, 2, 0, -851989, 2, 0, -917525, 2, 0, -983061, 2, 0, -1048597, 2, 0, -1114133, 2, 0, -1179669, 2, 0, -1245205, 2, 0, -1310741, 2, 0, -1376277, 2, 0, -1441813, 2, 0, -1507349, 2, 0, -1507348, 2, 0, -1441812, 2, 0, -1376276, 2, 0, -1310740, 2, 0, -1245204, 2, 0, -1179668, 2, 0, -1114132, 2, 0, -1048596, 2, 0, -983060, 2, 0, -917524, 2, 0, -851988, 2, 0, -786452, 2, 0, -720916, 2, 0, -655380, 2, 0, -589844, 0, 0, -524308, 2, 0, -458772, 2, 0, -393236, 2, 0, -327700, 2, 0, -327699, 2, 0, -393235, 2, 0, -458771, 2, 0, -524307, 2, 0, -589843, 2, 0, -655379, 2, 0, -720915, 2, 0, -786451, 2, 0, -851987, 2, 0, -917523, 2, 0, -983059, 2, 0, -1048595, 2, 0, -1114131, 2, 0, -1179667, 2, 0, -1245203, 2, 0, -1310739, 2, 0, -1376275, 2, 0, -1441811, 2, 0, -1507347, 2, 0, -983058, 2, 0, -917522, 2, 0, -851986, 2, 0, -786450, 0, 0, -720914, 2, 0, -655378, 2, 0, -589842, 2, 0, -524306, 2, 0, -458770, 2, 0, -393234, 0, 0, -327698, 2, 0, -327697, 2, 0, -393233, 0, 0, -458769, 2, 0, -524305, 2, 0, -589841, 2, 0, -655377, 2, 0, -720913, 2, 0, -786449, 0, 0, -851985, 2, 0, -917521, 2, 0, -983057, 2, 0, -1507345, 2, 0, -1441809, 2, 0, -1376273, 2, 0, -1310737, 2, 0, -1245201, 1, 0, -1179665, 2, 0, -1179664, 2, 0, -1245200, 2, 0, -1310736, 2, 0, -1376272, 2, 0, -1441808, 2, 0, -1507344, 2, 0, -1507343, 2, 0, -1441807, 2, 0, -1376271, 2, 0, -1310735, 2, 0, -1245199, 2, 0, -1179663, 2, 0, -1179662, 2, 0, -1245198, 2, 0, -1310734, 2, 0, -1376270, 2, 0, -1441806, 2, 0, -1507342, 2, 0, -1507341, 2, 0, -1441805, 2, 0, -1376269, 2, 0, -1310733, 2, 0, -1245197, 2, 0, -1179661, 0, 0, -1179660, 0, 0, -1245196, 2, 0, -1310732, 2, 0, -1376268, 2, 0, -1441804, 2, 0, -1507340, 2, 0, -1507339, 2, 0, -1441803, 2, 0, -1376267, 2, 0, -1310731, 2, 0, -1245195, 2, 0, -1179659, 2, 0, -1179658, 2, 0, -1245194, 2, 0, -1310730, 2, 0, -1376266, 2, 0, -1441802, 2, 0, -1507338, 2, 0, -1507337, 2, 0, -1441801, 2, 0, -1376265, 2, 0, -1310729, 2, 0, -1245193, 1, 0, -1179657, 2, 0, -1245192, 2, 0, -1310728, 2, 0, -1376264, 2, 0, -1441800, 2, 0, -1507336, 2, 0, -1507335, 2, 0, -1441799, 2, 0, -1376263, 2, 0, -1310727, 2, 0, -1245191, 2, 0, -1245190, 2, 0, -1310726, 2, 0, -1376262, 2, 0, -1441798, 2, 0, -1507334, 2, 0, -1507333, 2, 0, -1441797, 2, 0, -1376261, 2, 0, -1310725, 2, 0, -1245189, 2, 0, -1245188, 2, 0, -1310724, 2, 0, -1376260, 2, 0, -1441796, 2, 0, -1507332, 2, 0, -1441795, 2, 0, -1376259, 2, 0, -1310723, 2, 0, -1245187, 2, 0, -1441784, 2, 0, -1507320, 2, 0, -1572856, 2, 0, -1507330, 2, 0, -1507329, 2, 0, -1572864, 2, 0, -1507328, 2, 0, -1441793, 2, 0, -1376257, 2, 0, -1310721, 2, 0, -1245185, 2, 0, -1310720, 2, 0, -1376256, 2, 0, -1441792, 2, 0, -1441791, 2, 0, -1507327, 2, 0, -1572863, 2, 0, -1572862, 2, 0, -1507326, 2, 0, -1441790, 2, 0, -1376254, 2, 0, -1376255, 2, 0, -1310719, 1, 0, -1310718, 2, 0, -1310717, 2, 0, -1376253, 2, 0, -1441789, 2, 0, -1507325, 2, 0, -1572861, 2, 0, -1572860, 2, 0, -1507324, 0, 0, -1441788, 2, 0, -1376252, 2, 0, -1310716, 2, 0, -1310715, 2, 0, -1376251, 2, 0, -1441787, 2, 0, -1507323, 0, 0, -1572859, 2, 0, -1572858, 2, 0, -1507322, 0, 0, -1441786, 2, 0, -1376250, 2, 0, -1310714, 2, 0, -1310713, 2, 0, -1376249, 2, 0, -1441785, 2, 0, -1507321, 0, 0, -1572857, 2, 0, -1376248, 2, 0, -1310712, 2, 0, -1310711, 2, 0, -1376247, 2, 0, -1441783, 2, 0, -1507319, 2, 0, -1572855, 2, 0, -1572854, 2, 0, -1507318, 2, 0, -1441782, 2, 0, -1376246, 2, 0, -1310710, 2, 0, -1310709, 2, 0, -1376245, 2, 0, -1441781, 2, 0, -1507317, 2, 0, -1572853, 2, 0, -1572852, 2, 0, -1507316, 2, 0, -1441780, 2, 0, -1376244, 2, 0, -1310708, 1, 0, -1310707, 2, 0, -1376243, 2, 0, -1441779, 2, 0, -1507315, 2, 0, -1572851, 2, 0, -1572850, 2, 0, -1507314, 2, 0, -1441778, 2, 0, -1376242, 2, 0, -1310706, 2, 0, -1310705, 0, 0, -1376241, 2, 0, -1441777, 2, 0, -1507313, 2, 0, -1572849, 2, 0, -1572848, 2, 0, -1507312, 2, 0, -1441776, 2, 0, -1376240, 2, 0, -1310704, 0, 0, -1310703, 2, 0, -1376239, 2, 0, -1572846, 2, 0, -1507310, 2, 0, -1441774, 2, 0, -1441773, 2, 0, -1507309, 2, 0, -1572845, 2, 0, -1572844, 2, 0, -1507308, 2, 0, -1441772, 2, 0, -1376236, 2, 0, -1376237, 2, 0, -1310701, 2, 0, -1310700, 2, 0, -1310699, 2, 0, -1376235, 2, 0, -1441771, 2, 0, -1507307, 2, 0, -1572843, 2, 0, -1572842, 2, 0, -1507306, 2, 0, -1441770, 2, 0, -1376234, 2, 0, -1310698, 2, 0, -1310697, 2, 0, -1376233, 2, 0, -1441769, 2, 0, -1507305, 2, 0, -1572841, 2, 0, -1572840, 2, 0, -1507304, 0, 0, -1441768, 0, 0, -1376232, 2, 0, -1310696, 2, 0, -1310695, 2, 0, -1376231, 2, 0, -1441767, 2, 0, -1507303, 0, 0, -1572839, 2, 0, -1572838, 2, 0, -1507302, 2, 0, -1441766, 2, 0, -1376230, 2, 0, -1310694, 2, 0, -1310693, 2, 0, -1376229, 2, 0, -1441765, 2, 0, -1507301, 2, 0, -1572837, 2, 0, -1572836, 2, 0, -1507300, 2, 0, -1441764, 2, 0, -1376228, 2, 0, -1310692, 2, 0, -1310691, 2, 0, -1376227, 2, 0, -1441763, 2, 0, -1507299, 2, 0, -1572835, 2, 0, -1572834, 2, 0, -1507298, 2, 0, -1441762, 2, 0, -1376226, 2, 0, -1310690, 1, 0, -1310689, 2, 0, -1376225, 2, 0, -1441761, 2, 0, -1507297, 2, 0, -1572833, 2, 0, -1572832, 2, 0, -1507296, 2, 0, -1441760, 2, 0, -1376224, 2, 0, -1310688, 2, 0, -1310687, 2, 0, -1376223, 2, 0, -1441759, 2, 0, -1507295, 2, 0, -1572831, 2, 0, -1572830, 2, 0, -1507294, 2, 0, -1441758, 2, 0, -1376222, 2, 0, -1310686, 2, 0, -917479, 2, 0, -917478, 2, 0, -917477, 2, 0, -917476, 2, 0, -917475, 2, 0, -851980, 2, 0, -851979, 2, 0, -851978, 2, 0, -851977, 2, 0, -851976, 2, 0, -851975, 2, 0, -851974, 2, 0, -851973, 2, 0, -851972, 2, 0, -851971, 2, 0, -851970, 2, 0, -851969, 2, 0, -917504, 2, 0, -917503, 2, 0, -917502, 2, 0, -917501, 2, 0, -917500, 2, 0, -917499, 2, 0, -917498, 2, 0, -917497, 2, 0, -917496, 2, 0, -917495, 2, 0, -917494, 2, 0, -917493, 2, 0, -917492, 2, 0, -917491, 2, 0, -917490, 2, 0, -917489, 2, 0, -917488, 2, 0, -917487, 2, 0, -917486, 2, 0, -917485, 2, 0, -917484, 2, 0, -917483, 2, 0, -917482, 2, 0, -917481, 2, 0, -917480, 2, 0, -524304, 2, 0, -524303, 2, 0, -524302, 2, 0, -524301, 2, 0, -524300, 2, 0, -524299, 2, 0, -524298, 2, 0, -524297, 2, 0, -524296, 2, 0, -524295, 2, 0, -524294, 2, 0, -524293, 2, 0, -524292, 2, 0, -524291, 2, 0, -524290, 2, 0, -524289, 2, 0, -589824, 2, 0, -589823, 2, 0, -589822, 2, 0, -589821, 2, 0, -589820, 2, 0, -589819, 2, 0, -589818, 2, 0, -589817, 2, 0, -589816, 2, 0, -589815, 2, 0, -589814, 2, 0, -589813, 2, 0, -589812, 2, 0, -589811, 2, 0, -589810, 2, 0, -589809, 2, 0, -589808, 2, 0, -589807, 2, 0, -589806, 2, 0, -589805, 2, 0, -589804, 2, 0, -589803, 2, 0, -589802, 2, 0, -589801, 2, 0, -589800, 2, 0, -589799, 2, 0, 131056, 2, 0, 131057, 2, 0, 131058, 2, 0, 131059, 2, 0, 131060, 2, 0, 131061, 2, 0, 131062, 2, 0, 131063, 2, 0, 131064, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 65552, 2, 0, 65553, 2, 0, 65554, 2, 0, 65555, 2, 0, 65556, 2, 0, 65557, 2, 0, 65558, 2, 0, 65559, 2, 0, 65560, 2, 0, 65561, 2, 0, -196620, 2, 0, -196619, 2, 0, -196618, 2, 0, -196617, 2, 0, -196616, 2, 0, -196615, 2, 0, -196614, 2, 0, -196613, 2, 0, -196612, 2, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 2, 0, -262140, 2, 0, -262139, 2, 0, -262138, 2, 0, -262137, 2, 0, -262136, 2, 0, -262135, 2, 0, -262134, 2, 0, -262133, 2, 0, -262132, 2, 0, -262131, 2, 0, -262130, 2, 0, -262129, 2, 0, -262128, 2, 0, -262127, 2, 0, -262126, 2, 0, -262125, 2, 0, -262124, 2, 0, -262123, 2, 0, -262122, 2, 0, -262121, 2, 0, -262120, 2, 0, -262119, 2, 0, -262118, 2, 0, -262117, 2, 0, -262116, 2, 0, -262115, 2, 0, -327680, 2, 0, -262147, 2, 0, -262150, 2, 0, -262153, 2, 0, -262155, 2, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(113, -96)
@@ -412,6 +1008,53 @@ rotation = -1.5708
 position = Vector2(600, -168)
 rotation = -1.5708
 
+[node name="spike15" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(408, -72)
+
+[node name="spike16" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(392, -72)
+
+[node name="spike17" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(312, -120)
+rotation = -3.14159
+
+[node name="spike18" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(296, -120)
+rotation = 3.14159
+
+[node name="spike19" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(264, -72)
+
+[node name="spike20" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(248, -72)
+
+[node name="spike21" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(200, -72)
+
+[node name="spike22" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(88, -72)
+
+[node name="spike23" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(-8, -72)
+
+[node name="spike24" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(-24, -72)
+
+[node name="spike25" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(-56, -72)
+
+[node name="spike26" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(-72, -72)
+
+[node name="spike27" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(-104, -72)
+
+[node name="spike28" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(-120, -72)
+
+[node name="spike29" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(-152, -72)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="spikes"]
 libraries = {
 "": SubResource("AnimationLibrary_bgmp8")
@@ -427,13 +1070,30 @@ libraries = {
 "": SubResource("AnimationLibrary_bewdw")
 }
 
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="spikes"]
+libraries = {
+"": SubResource("AnimationLibrary_8w4um")
+}
+
 [node name="collects" type="Node2D" parent="."]
 
 [node name="collect" parent="collects" instance=ExtResource("10_t44t0")]
-position = Vector2(256, -243)
+position = Vector2(244, -240)
 
 [node name="collect2" parent="collects" instance=ExtResource("10_t44t0")]
-position = Vector2(-85, -265)
+position = Vector2(-85, -255)
+
+[node name="collect3" parent="collects" instance=ExtResource("10_t44t0")]
+position = Vector2(-57, -179)
+
+[node name="collect4" parent="collects" instance=ExtResource("10_t44t0")]
+position = Vector2(209, -176)
+
+[node name="collect5" parent="collects" instance=ExtResource("10_t44t0")]
+position = Vector2(342, -91)
+
+[node name="collect6" parent="collects" instance=ExtResource("10_t44t0")]
+position = Vector2(43, -93)
 
 [node name="1" type="Node2D" parent="."]
 
@@ -452,12 +1112,68 @@ position = Vector2(-14.625, -11)
 shape = SubResource("RectangleShape2D_fmhjt")
 
 [node name="Area2D3" type="Area2D" parent="1"]
-position = Vector2(88, -234)
+position = Vector2(100, -234)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="1/Area2D3"]
-position = Vector2(-1, -15)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_n43h1")
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="spikes_rush" type="AnimationPlayer" parent="2"]
+libraries = {
+"": SubResource("AnimationLibrary_8vaab")
+}
+
+[node name="area_rush" type="Area2D" parent="2"]
+position = Vector2(-224, -207)
+
+[node name="area_coll" type="CollisionShape2D" parent="2/area_rush"]
+shape = SubResource("RectangleShape2D_jl5s1")
+
+[node name="3" type="Node2D" parent="."]
+
+[node name="zigzag_1" type="AnimationPlayer" parent="3"]
+libraries = {
+"": SubResource("AnimationLibrary_hykn5")
+}
+
+[node name="zigzag_2" type="AnimationPlayer" parent="3"]
+libraries = {
+"": SubResource("AnimationLibrary_hykn5")
+}
+
+[node name="zigzag_3" type="AnimationPlayer" parent="3"]
+libraries = {
+"": SubResource("AnimationLibrary_wukj6")
+}
+
+[node name="zigzag_4" type="AnimationPlayer" parent="3"]
+libraries = {
+"": SubResource("AnimationLibrary_084jv")
+}
+
+[node name="zigzag_5" type="AnimationPlayer" parent="3"]
+libraries = {
+"": SubResource("AnimationLibrary_bn5d6")
+}
+
+[node name="spike_joke_1" type="Area2D" parent="3"]
+position = Vector2(8, -88)
+
+[node name="1_coll" type="CollisionShape2D" parent="3/spike_joke_1"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_mg6nb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -250.0
+offset_top = -192.0
+offset_right = -139.0
+offset_bottom = -169.0
+text = "DODGE THEM!"
 
 [connection signal="body_entered" from="1/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="1/Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="1/Area2D3" to="." method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="2/area_rush" to="." method="_on_area_rush_body_entered"]
+[connection signal="body_entered" from="3/spike_joke_1" to="." method="_on_spike_joke_1_body_entered"]
