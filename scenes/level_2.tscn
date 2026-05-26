@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://scripts/nice.gd" id="12_s2iv0"]
 [ext_resource type="PackedScene" uid="uid://bfcqmckr0gbk1" path="res://scenes/arrow.tscn" id="14_owpk6"]
 [ext_resource type="Script" path="res://scripts/q_tut.gd" id="15_h6m70"]
-[ext_resource type="PackedScene" uid="uid://j6n3l2bvlmtl" path="res://scenes/home.tscn" id="16_1qdjj"]
+[ext_resource type="PackedScene" uid="uid://b23f5qaeaewfe" path="res://scenes/pause_menu.tscn" id="17_kcpme"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfbs5"]
 texture = ExtResource("1_pjmah")
@@ -101,6 +101,33 @@ size = Vector2(23, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51358"]
 size = Vector2(20, 14)
 
+[sub_resource type="Animation" id="Animation_bd2kq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.741176, 0.772549, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_shadow_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.337255, 0.835294, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_yeqi8"]
 resource_name = "q_tut_anim"
 length = 2.0
@@ -127,33 +154,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0.337255, 0.835294, 0), Color(0, 0.337255, 0.835294, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_bd2kq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.741176, 0.772549, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:theme_override_colors/font_shadow_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.337255, 0.835294, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3v5il"]
@@ -305,11 +305,11 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="home" parent="." instance=ExtResource("16_1qdjj")]
-offset_left = -280.0
-offset_top = -263.0
-offset_right = -264.0
-offset_bottom = -247.0
+[node name="pause_menu" parent="." instance=ExtResource("17_kcpme")]
+offset_left = -100.0
+offset_top = -195.0
+offset_right = -99.0
+offset_bottom = 169.0
 
 [connection signal="body_entered" from="spikes/spike_fall/fall_detect" to="." method="_on_fall_detect_body_entered"]
 [connection signal="body_entered" from="portal" to="." method="_on_portal_body_entered"]

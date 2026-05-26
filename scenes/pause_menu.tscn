@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://b23f5qaeaewfe"]
+
+[ext_resource type="Script" path="res://scripts/yes_button.gd" id="1_p1yy0"]
+[ext_resource type="Script" path="res://scripts/no_button.gd" id="2_s7ila"]
+
+[node name="pause_menu" type="Control"]
+z_index = 20
+layout_mode = 3
+anchor_right = 0.158
+anchor_bottom = 0.346
+offset_right = 0.639984
+offset_bottom = 0.319977
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.723465, 0.723465)
+
+[node name="progress_lost" type="Label" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.94, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.7, 0.203, 0.203, 1)
+theme_override_colors/font_outline_color = Color(1, 0.87, 0.87, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 36
+text = "YOUR PROGRESS WILL BE LOST !"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="continue" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 230.0
+offset_right = 250.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0, 0.720667, 0.94, 1)
+theme_override_colors/font_shadow_color = Color(0.203, 0.7, 0.559183, 1)
+theme_override_colors/font_outline_color = Color(0.87, 1, 0.945833, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 36
+text = "CONTINUE ?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="yes" type="Button" parent="continue"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 60.0
+offset_right = 107.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.42, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "YES"
+script = ExtResource("1_p1yy0")
+
+[node name="no" type="Button" parent="continue"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 60.0
+offset_right = 213.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.52, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "NO"
+script = ExtResource("2_s7ila")
+
+[connection signal="pressed" from="continue/yes" to="continue/yes" method="_on_yes_pressed"]
+[connection signal="pressed" from="continue/no" to="continue/yes" method="_on_no_pressed"]

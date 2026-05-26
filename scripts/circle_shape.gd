@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @onready var jumpsound: AudioStreamPlayer2D = $jumpsound
 
-const SPEED = 100
-const JUMP_VELOCITY = -600.0/2
+var SPEED = 100
+var JUMP_VELOCITY = -300
 
 
 func _physics_process(delta: float) -> void:

@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var pause_menu: Control = $pause_menu
 @onready var spike5: Area2D = $spikes/spike5
 @onready var portal: Area2D = $portal
 @onready var character: Node2D = $character
@@ -22,11 +23,13 @@ func _ready() -> void:
 	character.position.y = -209
 	character.position.x = -209
 	score_manager.reset()
+	pause_menu.visible = false
 
 func _process(delta: float) -> void:
 	if score_manager.score == 4:
 		spike5.position.x += 1000
-
+	if Input.is_action_just_pressed("esc"):
+		pause_menu.visible = true
 
 
 func _on_portal_body_entered(body: Node2D) -> void:

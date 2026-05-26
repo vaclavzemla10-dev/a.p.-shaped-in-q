@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3eryao4875wk"]
+
+[ext_resource type="Texture2D" uid="uid://j1da6r18um0c" path="res://assets/power up arrow.png" id="1_cb7xx"]
+[ext_resource type="Script" path="res://scripts/power_up.gd" id="1_us455"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irbnm"]
+size = Vector2(8, 14)
+
+[node name="power_up" type="Area2D"]
+script = ExtResource("1_us455")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cb7xx")
+
+[node name="power_up_coll" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_irbnm")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @onready var jumpsound: AudioStreamPlayer2D = $jumpsound
 
-const SPEED = 400.0/3
-const JUMP_VELOCITY = -500.0/2
+var SPEED = 133.3
+var JUMP_VELOCITY = -250
 
 func _ready() -> void:
 	set_rotation_degrees(0)
