@@ -15,23 +15,40 @@ extends Node2D
 @onready var area_coll: CollisionShape2D = $"2/area_rush/area_coll"
 @onready var zigzag_1: AnimationPlayer = $"3/zigzag_1"
 @onready var zigzag_2: AnimationPlayer = $"3/zigzag_2"
-@onready var zigzag_3: AnimationPlayer = $"3/zigzag_3"
-@onready var spike_joke_1: Area2D = $"3/spike_joke_1"
-@onready var _1_coll: CollisionShape2D = $"3/spike_joke_1/1_coll"
-@onready var animation_player_4: AnimationPlayer = $spikes/AnimationPlayer4
 @onready var zigzag_4: AnimationPlayer = $"3/zigzag_4"
 @onready var zigzag_5: AnimationPlayer = $"3/zigzag_5"
+@onready var zigzag_6: AnimationPlayer = $"3/zigzag_6"
+@onready var zigzag_7: AnimationPlayer = $"3/zigzag_7"
+@onready var zigzag_8: AnimationPlayer = $"3/zigzag_8"
+@onready var zigzag_9: AnimationPlayer = $"3/zigzag_9"
+@onready var label_2: Label = $"4/Label2"
+@onready var area_label_2: Area2D = $"4/area_label_2"
+@onready var label_3: Label = $"4/Label3"
+@onready var arrow_area: Area2D = $"5/arrow_area"
+@onready var arrow: Area2D = $arrow
+@onready var arrow_coll: CollisionShape2D = $"5/arrow_area/arrow_coll"
 
 func _ready() -> void:
+	arrow.position.x = 1067
+	label_3.visible = false
+	label_2.visible = false
 	zigzag_1.play("zigzag_1")
 	zigzag_2.play("zigzag_2")
-	zigzag_3.play("zigzag_3")
 	zigzag_4.play("zigazg_4")
 	zigzag_5.play("zigzag_5")
+	zigzag_6.play("zigzag_6")
+	zigzag_7.play("zigzag_7")
+	zigzag_8.play("zigzag_8")
+	zigzag_9.play("zigzag_9")
 	score_manager.reset()
 	pause_menu.visible = false
 
 func _process(delta: float) -> void:
+	if score_manager.score > 6:
+		score_manager.score = 6
+	if score_manager.score == 6:
+		arrow.position.x = -243
+		arrow.position.y = 84
 	if Input.is_action_just_pressed("esc"):
 		pause_menu.visible = true
 
@@ -52,6 +69,11 @@ func _on_area_rush_body_entered(body: Node2D) -> void:
 	await spikes_rush.animation_finished
 	area_coll.set_deferred("disabled", true)
 
-func _on_spike_joke_1_body_entered(body: Node2D) -> void:
-	animation_player_4.play("spikes_jokes")
-	_1_coll.set_deferred("disabled", true)
+func _on_area_label_2_body_entered(body: Node2D) -> void:
+	label_2.visible = true
+
+func _on_area_label_3_body_entered(body: Node2D) -> void:
+	label_3.visible = true
+
+func _on_arrow_area_body_entered(body: Node2D) -> void:
+	arrow.position.x = 459

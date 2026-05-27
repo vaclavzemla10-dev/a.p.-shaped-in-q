@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b18hshjlnajl8"]
+[gd_scene load_steps=31 format=3 uid="uid://b18hshjlnajl8"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_ookup"]
 [ext_resource type="Texture2D" uid="uid://sgapl7lql6ou" path="res://assets/cobblestone texture.png" id="1_pjmah"]
@@ -15,7 +15,9 @@
 [ext_resource type="Script" path="res://scripts/nice.gd" id="12_s2iv0"]
 [ext_resource type="PackedScene" uid="uid://bfcqmckr0gbk1" path="res://scenes/arrow.tscn" id="14_owpk6"]
 [ext_resource type="Script" path="res://scripts/q_tut.gd" id="15_h6m70"]
+[ext_resource type="Script" path="res://scripts/death_count.gd" id="17_car7w"]
 [ext_resource type="PackedScene" uid="uid://b23f5qaeaewfe" path="res://scenes/pause_menu.tscn" id="17_kcpme"]
+[ext_resource type="Texture2D" uid="uid://d058x6ijqhlh5" path="res://assets/skull.png" id="18_tlb0x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfbs5"]
 texture = ExtResource("1_pjmah")
@@ -310,6 +312,17 @@ offset_left = -100.0
 offset_top = -195.0
 offset_right = -99.0
 offset_bottom = 169.0
+
+[node name="death_count" type="Label" parent="."]
+offset_left = 195.0
+offset_top = -7.0
+offset_right = 235.0
+offset_bottom = 16.0
+script = ExtResource("17_car7w")
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(187, 5)
+texture = ExtResource("18_tlb0x")
 
 [connection signal="body_entered" from="spikes/spike_fall/fall_detect" to="." method="_on_fall_detect_body_entered"]
 [connection signal="body_entered" from="portal" to="." method="_on_portal_body_entered"]

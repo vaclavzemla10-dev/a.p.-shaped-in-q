@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ds4qejdrne7ss"]
+[gd_scene load_steps=27 format=3 uid="uid://ds4qejdrne7ss"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_1tt6t"]
 [ext_resource type="Texture2D" uid="uid://sgapl7lql6ou" path="res://assets/cobblestone texture.png" id="1_4cyqf"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://scripts/score_tutorial.gd" id="11_mv2kd"]
 [ext_resource type="Script" path="res://scripts/next_level.gd" id="13_w44xv"]
 [ext_resource type="PackedScene" uid="uid://b23f5qaeaewfe" path="res://scenes/pause_menu.tscn" id="15_635x0"]
+[ext_resource type="Script" path="res://scripts/death_count.gd" id="15_i0j6s"]
+[ext_resource type="Texture2D" uid="uid://d058x6ijqhlh5" path="res://assets/skull.png" id="16_5a8iu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgvio"]
 texture = ExtResource("1_4cyqf")
@@ -243,3 +245,13 @@ offset_left = 88.0
 offset_top = -2.0
 offset_right = 88.64
 offset_bottom = -1.68002
+
+[node name="death_count" type="Label" parent="."]
+offset_left = 311.0
+offset_right = 351.0
+offset_bottom = 23.0
+script = ExtResource("15_i0j6s")
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(304, 12)
+texture = ExtResource("16_5a8iu")

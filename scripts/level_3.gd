@@ -12,10 +12,10 @@ extends Node2D
 @onready var spike_8: Area2D = $spikes/spike8
 @onready var spike_9: Area2D = $spikes/spike9
 @onready var spike_10: Area2D = $spikes/spike10
-@onready var ghost_1: Sprite2D = $ghost_1
-@onready var ghost_2: Sprite2D = $ghost_2
-@onready var ghost_3: Sprite2D = $ghost_3
-@onready var ghost_4: Sprite2D = $ghost_4
+@onready var ghost_1: Sprite2D = $ghosts/ghost_1
+@onready var ghost_2: Sprite2D = $ghosts/ghost_2
+@onready var ghost_3: Sprite2D = $ghosts/ghost_3
+@onready var ghost_4: Sprite2D = $ghosts/ghost_4
 @onready var area_2d_2: Area2D = $Area2D2
 @onready var ghosts_anim: AnimationPlayer = $ghosts/ghosts_anim
 
@@ -23,7 +23,7 @@ func _ready() -> void:
 	arrow.position.x = -400
 	arrow.position.y = -230
 	power_up.position.x = 400
-	score_manager.score = 0
+	score_manager.reset()
 	pause_menu.visible = false
 	jump.visible = false
 
@@ -39,11 +39,9 @@ func _on_body_entered(body: Node2D) -> void:
 	await animation_player.animation_finished
 	timer.start(1)
 
-
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	ghosts_anim.play("ghosts_move")
 	await ghosts_anim.animation_finished
-
 
 func _on_timer_timeout() -> void:
 	spike_11.position.x = 900
