@@ -1,5 +1,7 @@
 extends Node
 
+@onready var correct: AudioStreamPlayer2D = $sfx/correct
+
 var deaths = 0
 var score = 0
 var death_registered = false

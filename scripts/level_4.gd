@@ -24,11 +24,13 @@ extends Node2D
 @onready var label_2: Label = $"4/Label2"
 @onready var area_label_2: Area2D = $"4/area_label_2"
 @onready var label_3: Label = $"4/Label3"
-@onready var arrow_area: Area2D = $"5/arrow_area"
 @onready var arrow: Area2D = $arrow
-@onready var arrow_coll: CollisionShape2D = $"5/arrow_area/arrow_coll"
+@onready var spike_27: Area2D = $spikes/spike27
+@onready var area_spike: Area2D = $"4/area_spike"
+@onready var arrow_area: Area2D = $"5/arrow_area"
 
 func _ready() -> void:
+	spike_27.position.x = 1167
 	arrow.position.x = 1067
 	label_3.visible = false
 	label_2.visible = false
@@ -75,5 +77,8 @@ func _on_area_label_2_body_entered(body: Node2D) -> void:
 func _on_area_label_3_body_entered(body: Node2D) -> void:
 	label_3.visible = true
 
+func _on_area_spike_body_entered(body: Node2D) -> void:
+	spike_27.position.x = 392
+
 func _on_arrow_area_body_entered(body: Node2D) -> void:
-	arrow.position.x = 459
+	arrow.position.x = 460

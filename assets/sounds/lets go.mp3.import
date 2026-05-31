@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhqf5jpcob58y"
+path="res://.godot/imported/lets go.mp3-dd13844b80def663fcc4b997b81d4679.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/lets go.mp3"
+dest_files=["res://.godot/imported/lets go.mp3-dd13844b80def663fcc4b997b81d4679.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

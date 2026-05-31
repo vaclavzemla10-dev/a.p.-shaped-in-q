@@ -5,10 +5,10 @@
 [ext_resource type="AudioStream" uid="uid://dj5nmy8yne6kb" path="res://assets/sounds/explosion.wav" id="3_85csi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktdfs"]
-size = Vector2(6, 12)
+size = Vector2(4, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxvow"]
-size = Vector2(12, 6)
+size = Vector2(12, 5)
 
 [node name="spike" type="Area2D"]
 z_index = 1
@@ -20,11 +20,11 @@ script = ExtResource("1_utjt5")
 texture = ExtResource("1_3pusi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ktdfs")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_vxvow")
 
 [node name="Timer" type="Timer" parent="."]

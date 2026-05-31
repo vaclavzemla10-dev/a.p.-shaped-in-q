@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b2d2sivv82fc3"]
+[gd_scene load_steps=55 format=3 uid="uid://b2d2sivv82fc3"]
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_72lyb"]
 [ext_resource type="PackedScene" uid="uid://b23f5qaeaewfe" path="res://scenes/pause_menu.tscn" id="2_a3fp2"]
@@ -1002,14 +1002,17 @@ size = Vector2(56, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ud68"]
 size = Vector2(8, 59)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gngil"]
-size = Vector2(10, 58)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h50m"]
+size = Vector2(1, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27j7a"]
+size = Vector2(0, 60)
 
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_72lyb")
 
 [node name="arrow" parent="." instance=ExtResource("2_hfvw2")]
-position = Vector2(-243, 84)
+position = Vector2(-242, 83)
 
 [node name="score_label" type="Label" parent="."]
 anchors_preset = 8
@@ -1132,6 +1135,9 @@ position = Vector2(-88, -72)
 [node name="spike26" parent="spikes" instance=ExtResource("7_2dscr")]
 position = Vector2(-136, -120)
 rotation = 3.14159
+
+[node name="spike27" parent="spikes" instance=ExtResource("7_2dscr")]
+position = Vector2(392, 8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="spikes"]
 libraries = {
@@ -1273,9 +1279,9 @@ theme_override_fonts/font = ExtResource("2_rhk3b")
 text = "Dont worry,"
 
 [node name="Label3" type="Label" parent="4"]
-offset_left = 48.0
+offset_left = 45.0
 offset_top = -30.0
-offset_right = 366.0
+offset_right = 363.0
 offset_bottom = -7.0
 theme_override_colors/font_color = Color(0, 0.733333, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.5, 1, 1)
@@ -1294,14 +1300,20 @@ shape = SubResource("RectangleShape2D_1xk11")
 position = Vector2(0, -15.5)
 shape = SubResource("RectangleShape2D_4ud68")
 
+[node name="area_spike" type="Area2D" parent="4"]
+position = Vector2(365, 3)
+
+[node name="coll_spike" type="CollisionShape2D" parent="4/area_spike"]
+position = Vector2(0.5, -15.5)
+shape = SubResource("RectangleShape2D_5h50m")
+
 [node name="5" type="Node2D" parent="."]
 
 [node name="arrow_area" type="Area2D" parent="5"]
-position = Vector2(-200, 63)
+position = Vector2(-199, 64)
 
 [node name="arrow_coll" type="CollisionShape2D" parent="5/arrow_area"]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_gngil")
+shape = SubResource("RectangleShape2D_27j7a")
 
 [node name="death_count" type="Label" parent="."]
 offset_left = -240.0
@@ -1320,4 +1332,5 @@ texture = ExtResource("13_s342b")
 [connection signal="body_entered" from="2/area_rush" to="." method="_on_area_rush_body_entered"]
 [connection signal="body_entered" from="4/area_label_2" to="." method="_on_area_label_2_body_entered"]
 [connection signal="body_entered" from="4/area_label_3" to="." method="_on_area_label_3_body_entered"]
+[connection signal="body_entered" from="4/area_spike" to="." method="_on_area_spike_body_entered"]
 [connection signal="body_entered" from="5/arrow_area" to="." method="_on_arrow_area_body_entered"]
