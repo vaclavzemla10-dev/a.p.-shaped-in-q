@@ -1,9 +1,10 @@
 extends Node2D
 
-var time_left = 60
+var time_left = 69
 var ghost_active = false
 var ground_sike_2_triggered = false
 var bridge_freed = false
+var ground_hiphop_freed
 
 @onready var pause_menu: Control = $pause_menu
 @onready var timer: Timer = $Timer
@@ -15,15 +16,25 @@ var bridge_freed = false
 @onready var cache_blocks: Node2D = $grounds/cache_blocks
 @onready var button_7_trigger_area: Area2D = $button_7_trigger_area
 @onready var timer_bridge: Timer = $timer_bridge
+@onready var ground_drop_1: Node2D = $grounds/ground_drop_1
+@onready var timer_drop_1: Timer = $timer_drop_1
+@onready var timer_hiphop: Timer = $timer_hiphop
+@onready var ground_hiphop: Node2D = $grounds/ground_hiphop
+@onready var spikes_rushing: AnimationPlayer = $spikes_rushing
+@onready var arrow: Area2D = $arrow
 
 @onready var collect_3: Area2D = $collects/collect3
 
 @onready var portal_area: Area2D = $portal_area
+@onready var portal_area_2: Area2D = $portal_area2
+
+@onready var camera_2d: Camera2D = $Camera2D
 
 @onready var spike_dodge: AnimationPlayer = $spike_dodge
 @onready var ground_sike: AnimationPlayer = $ground_sike
 @onready var ghost_blocks: Node2D = $grounds/ghost_blocks
 @onready var ground_bridge: Node2D = $grounds/ground_bridge
+@onready var spikes_rushing_parent: Node2D = $spikes/spikes_rushing_parent
 
 @onready var spike: Area2D = $spikes/spike
 @onready var spike_4: Area2D = $spikes/spike4
@@ -42,6 +53,8 @@ var bridge_freed = false
 @onready var spike_19: Area2D = $spikes/spike19
 @onready var spike_20: Area2D = $spikes/spike20
 @onready var spike_21: Area2D = $spikes/spike21
+@onready var spike_24: Area2D = $spikes/spike24
+@onready var spike_25: Area2D = $spikes/spike25
 
 @onready var button_1: Button = $buttons/Button1
 @onready var button_2: Button = $buttons/Button2
@@ -51,6 +64,8 @@ var bridge_freed = false
 @onready var button_6: Button = $buttons/Button6
 @onready var button_7: Button = $buttons/Button7
 @onready var button_8: Button = $buttons/Button8
+@onready var button_9: Button = $buttons/Button9
+@onready var button_10: Button = $buttons/Button10
 
 @onready var ground_texture_1: StaticBody2D = $grounds/GroundTexture1
 @onready var ground_texture_2: StaticBody2D = $grounds/GroundTexture2
@@ -73,6 +88,7 @@ var bridge_freed = false
 @onready var ground_texture_19: StaticBody2D = $grounds/GroundTexture19
 @onready var ground_texture_20: StaticBody2D = $grounds/GroundTexture20
 @onready var ground_texture_21: StaticBody2D = $grounds/GroundTexture21
+@onready var ground_texture_30: StaticBody2D = $grounds/GroundTexture30
 
 @onready var collision_shape_2d_1: CollisionShape2D = $grounds/GroundTexture13/CollisionShape2D1
 @onready var collision_shape_2d_2: CollisionShape2D = $grounds/GroundTexture14/CollisionShape2D2
@@ -81,6 +97,7 @@ var bridge_freed = false
 @onready var fall_after_dodge_area: Area2D = $fall_after_dodge_area
 @onready var ground_sike_1_area: Area2D = $ground_sike_1_area
 @onready var ground_sike_2_area: Area2D = $ground_sike_2_area
+@onready var spikes_rushing_area: Area2D = $spikes_rushing_area
 
 @onready var buzzer: AudioStreamPlayer2D = $sfx/buzzer
 @onready var correct: AudioStreamPlayer2D = $sfx/correct
@@ -91,6 +108,11 @@ var bridge_freed = false
 @onready var show_1: Area2D = $show_1
 
 func _ready() -> void:
+	camera_2d.zoom.x = 3.5
+	camera_2d.zoom.y = 3.5
+	camera_2d.position.x = 113
+	camera_2d.position.y = -300
+	ground_hiphop.position.y = -1067
 	spike_17.visible = false
 	spike_18.visible = false
 	spike_19.visible = false
@@ -105,6 +127,9 @@ func _ready() -> void:
 	spike_5.visible = false
 	spike_5.position.x = -40
 	spike_5.position.y = -168
+	spike_6.position.x = -24
+	spike_6.position.y = -168
+	spike_6.rotation = 0
 	spike_6.visible = false
 	spike_7.visible = false
 	spike_8.visible = false
@@ -136,13 +161,17 @@ func _ready() -> void:
 	click_it.visible = false
 	tile_map_2.visible = false
 	button_5.position.x = 1567
-	timer.start(60)
+	timer.start(69)
 	button_5.visible = false
 	redzone.position.y = 288
 	score_manager.reset()
 	pause_menu.visible = false
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("reset"):
+		score_manager.add_death()
+	if score_manager.score == 7:
+		ground_texture_30.position.x = -1567
 	if score_manager.score == 3 and not ghost_active:
 		ghost_active = true
 		collision_shape_2d_1.queue_free()
@@ -164,7 +193,15 @@ func killzone():
 
 func move_ground_sike_2():
 	var tween = create_tween()
-	tween.tween_property(ground_sike_2, "position:x", -48, 0.2)
+	tween.tween_property(ground_sike_2, "position:x", -48, 0.1)
+
+func ground_drop_1_go():
+	var tween = create_tween()
+	tween.tween_property(ground_drop_1, "position:x", 48, 0.1)
+
+func ground_drop_1_back():
+	var tween = create_tween()
+	tween.tween_property(ground_drop_1, "position:x", -48, 0.1)
 
 func _on_timer_timeout() -> void:
 	fail.play()
@@ -204,6 +241,12 @@ func _on_button_4_pressed() -> void:
 	buzzer.play()
 
 func _on_button_5_pressed() -> void:
+	camera_2d.zoom.x = 1.8
+	camera_2d.zoom.y = 1.8
+	camera_2d.position.x = 113
+	camera_2d.position.y = -96
+	spike_24.visible = true
+	spike_25.visible = true
 	spike_17.visible = true
 	spike_18.visible = true
 	spike_19.visible = true
@@ -258,6 +301,8 @@ func _on_show_1_body_entered(body: Node2D) -> void:
 	show_1.queue_free()
 
 func _on_button_6_pressed() -> void:
+	click.play()
+	await click.finished
 	spike_5.visible = true
 	spike_6.visible = true
 	spike_7.visible = true
@@ -300,6 +345,8 @@ func _on_portal_area_body_entered(body: Node2D) -> void:
 	body.get_parent().global_position = Vector2(950, -350)
 
 func _on_button_7_pressed() -> void:
+	click.play()
+	await click.finished
 	button_7.disabled = true
 	button_8.visible = true
 	cache_blocks.queue_free()
@@ -310,6 +357,9 @@ func _on_button_7_trigger_area_body_entered(body: Node2D) -> void:
 	button_7_trigger_area.queue_free()
 
 func _on_button_8_pressed() -> void:
+	button_9.visible = true
+	click.play()
+	await click.finished
 	button_8.disabled = true
 	var tween = create_tween()
 	tween.tween_property(ground_bridge, "position:y", 0, 0.1)
@@ -322,3 +372,37 @@ func _on_timer_bridge_timeout() -> void:
 	bridge_freed = true
 	ground_bridge.queue_free()
 	button_8.queue_free()
+
+func _on_button_9_pressed() -> void:
+	click.play()
+	button_10.visible = true
+	button_9.disabled = true
+	click.play()
+	ground_drop_1_go()
+	timer_drop_1.start(1)
+	button_9.queue_free()
+
+func _on_timer_drop_1_timeout() -> void:
+	ground_drop_1_back()
+
+func _on_button_10_pressed() -> void:
+	click.play()
+	button_10.disabled = true
+	ground_hiphop.position.y = 0
+	spike_8.queue_free()
+	timer_hiphop.start(7)
+
+func _on_timer_hiphop_timeout() -> void:
+	if ground_hiphop_freed:
+		return
+	ground_hiphop_freed = true
+	ground_hiphop.queue_free()
+
+func _on_spikes_rushing_area_body_entered(body: Node2D) -> void:
+	spikes_rushing.play("spikes_rushing")
+	await spikes_rushing.animation_finished
+	spikes_rushing_area.queue_free()
+	spikes_rushing_parent.queue_free()
+
+func _on_teleport_area_body_entered(body: Node2D) -> void:
+	arrow.visible = true

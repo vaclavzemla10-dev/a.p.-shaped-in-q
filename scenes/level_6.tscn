@@ -1,0 +1,156 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn75m7rl3ip6i"]
+
+[ext_resource type="Script" path="res://scripts/level_6.gd" id="1_cvj3h"]
+[ext_resource type="Script" path="res://scripts/death_count.gd" id="2_qdggc"]
+[ext_resource type="Texture2D" uid="uid://d058x6ijqhlh5" path="res://assets/skull.png" id="3_va5sw"]
+
+[sub_resource type="Animation" id="Animation_52kex"]
+resource_name = "text_anim"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text_cz:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-576, 324), Vector2(-576, -2229)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("text_eng:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 324), Vector2(0, -2229)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("death_count:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(18.0333, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-150, 324), Vector2(-150, -498)]
+}
+
+[sub_resource type="Animation" id="Animation_6d0nt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text_cz:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-576, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("text_eng:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 324)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("death_count:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-150, 324)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mrei"]
+_data = {
+"RESET": SubResource("Animation_6d0nt"),
+"text_anim": SubResource("Animation_52kex")
+}
+
+[node name="level_6" type="Node2D"]
+script = ExtResource("1_cvj3h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.67, 1.67)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+color = Color(0, 0, 0, 1)
+
+[node name="text_cz" type="Label" parent="."]
+offset_left = -576.0
+offset_top = -995.05
+offset_bottom = 909.95
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0992, 0.27952, 0.32, 1)
+theme_override_font_sizes/font_size = 48
+text = "Děkuji, že jsi dohrál mou hru SHAPED IN Q.
+
+Tato hra vznikla jako moje absolventská práce. Tato hra mi trvala 4 měsíce, a na začátku to nevypadalo úplně nejlépe. Proto jsem na ní začal pracovat každým dnem klidně i několik hodin. Během tvoření jsem narazil na spustu problémů a errorů, které jsem ale dokázal vyřešit. S výsledkem jsem velmi spokojen a budu na ní pracovat i nadále, tedy pokud bude čas. Doufám, že tě hra bavila alespoň natolik, jako bavila mě tvořit.
+
+-Václav Žemla, absolvent ZŠ Sadská"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="text_eng" type="Label" parent="."]
+offset_top = -995.05
+offset_right = 576.0
+offset_bottom = 909.95
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0992, 0.27952, 0.32, 1)
+theme_override_font_sizes/font_size = 48
+text = "Thank you for finishing my game SHAPED IN Q.
+
+This game was created as my graduation project. This game took me 4 months to make, and at the beginning it didn't look very good. That's why I started working on it every day, even for a few hours. During the creation, I encountered a lot of problems and errors, which I managed to solve. I am very satisfied with the result and will continue to work on it, if I have time. I hope you enjoyed the game at least as much as I enjoyed creating it.
+
+-Václav Žemla, graduate of ZŠ Sadská"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6mrei")
+}
+autoplay = "text_anim"
+
+[node name="death_count" type="Label" parent="."]
+offset_left = -150.0
+offset_top = 324.0
+offset_right = -110.0
+offset_bottom = 347.0
+scale = Vector2(7.52, 7.52)
+script = ExtResource("2_qdggc")
+
+[node name="Skull" type="Sprite2D" parent="death_count"]
+position = Vector2(-7.31383, 11.9681)
+texture = ExtResource("3_va5sw")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

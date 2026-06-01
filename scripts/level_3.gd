@@ -33,6 +33,8 @@ func _process(delta: float) -> void:
 		arrow.position.y = -215
 	if Input.is_action_just_pressed("esc"):
 		pause_menu.visible = true
+	if Input.is_action_just_pressed("reset"):
+		score_manager.add_death()
 
 func _on_body_entered(body: Node2D) -> void:
 	animation_player.play("move_spikes")

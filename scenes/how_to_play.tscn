@@ -1,33 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://drvb8oqh5emov"]
+[gd_scene load_steps=4 format=3 uid="uid://drvb8oqh5emov"]
 
 [ext_resource type="PackedScene" uid="uid://b35d1gykdllnl" path="res://scenes/next_page.tscn" id="1_pc3x7"]
 [ext_resource type="Script" path="res://scripts/how_to_play.gd" id="1_vo45r"]
-[ext_resource type="Texture2D" uid="uid://cvfdmis4o5iio" path="res://assets/Snímek obrazovky 2026-05-04 162406.png" id="3_q41mx"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_jsrp2"]
+[ext_resource type="Texture2D" uid="uid://dp0t0sj06c0qg" path="res://assets/JUMP.png" id="3_fcste"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -57.0
 script = ExtResource("1_vo45r")
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="next_page" parent="." instance=ExtResource("1_pc3x7")]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 191.0
-offset_right = 539.0
-offset_bottom = 207.0
+offset_left = 426.0
+offset_top = 168.0
+offset_right = 442.0
+offset_bottom = 184.0
+scale = Vector2(8, 8)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-132, 438)
-scale = Vector2(0.997712, 2.45592)
-texture = ExtResource("3_q41mx")
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.7, 1.7)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-modulate = Color(0.431061, 0.16717, 0.023032, 1)
+[node name="Jump" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-179, 504)
-scale = Vector2(6007.5, 6007.5)
-texture = SubResource("CanvasTexture_jsrp2")
+position = Vector2(1.66669, 1.5)
+scale = Vector2(0.904167, 0.904167)
+texture = ExtResource("3_fcste")

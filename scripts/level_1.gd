@@ -9,3 +9,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		pause_menu.visible = true
+	if Input.is_action_just_pressed("reset"):
+		score_manager.add_death()
