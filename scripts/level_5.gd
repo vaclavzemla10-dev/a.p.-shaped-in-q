@@ -168,6 +168,8 @@ func _ready() -> void:
 	pause_menu.visible = false
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):
+		pause_menu.visible = true
 	if Input.is_action_just_pressed("reset"):
 		score_manager.add_death()
 	if score_manager.score == 7:
@@ -181,8 +183,6 @@ func _process(delta: float) -> void:
 		collect_3.position.x = -14
 	if timer.time_left > 0:
 		stopwatch.text = str(snapped(timer.time_left, 0.1))
-	if Input.is_action_just_pressed("esc"):
-		pause_menu.visible = true
 
 func killzone():
 	var tween = create_tween()
